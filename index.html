@@ -6,89 +6,121 @@
 
     <title>Acessível</title>
 
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
     <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body>
+    <body>
 
-<header>
-    <div class="logo">
-        <img src="images/logo.png" alt="Logo INSEP Acessível"> INSEP Acessível
-    </div>
+    <header>
+        <div class="container py-3">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="#">Sobre</a>
-        <a href="#">Serviços</a>
-        <a href="#">Contato</a>
-        <a href="login/index.html">Login</a>
-    </nav>
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo INSEP Acessível"> Acessível
+                </div>
 
-    <div class="acoes">
-        <a class="btn-login" href="login/index.html">
-            Entrar
-        </a>
-        <button id="tema">🌙</button>
-        <button id="voz">🔊</button>
-    </div>
-</header>
+                <nav class="d-flex flex-wrap gap-3">
+                    <a href="index.html" class="text-white text-decoration-none">Home</a>
+                    <a href="#" class="text-white text-decoration-none">Sobre</a>
+                    <a href="#" class="text-white text-decoration-none">Serviços</a>
+                    <a href="#" class="text-white text-decoration-none">Contato</a>
+                </nav>
 
+                <div class="acoes d-flex align-items-center gap-2">
+                    <a class="btn btn-light" href="login/index.html">
+                        Entrar
+                    </a>
 
-<section class="banner">
+                    <button id="tema" class="btn btn-light" aria-label="Alternar tema">
+                        🌙
+                    </button>
 
-    <div>
-        <h1>
-            Tecnologia para uma sociedade mais acessível
-        </h1>
+                    <button id="voz" class="btn btn-light" aria-label="Ativar leitura por voz">
+                        🔊
+                    </button>
+                </div>
 
-        <p>
-            Desenvolvendo soluções digitais inclusivas
-            para conectar pessoas.
-        </p>
+            </div>
+        </div>
+    </header>
 
-        <button class="botao">
-            Conheça o projeto
-        </button>
-    </div>
+    <section class="banner text-white">
+        <div class="container py-5">
+            <div class="py-5">
 
-</section>
+                <h1 class="display-4 fw-bold">
+                    Tecnologia para uma sociedade mais acessível
+                </h1>
 
+                <p class="lead my-4">
+                    Desenvolvendo soluções digitais inclusivas
+                    para conectar pessoas.
+                </p>
 
-<section class="cards">
+                <button class="btn btn-light btn-lg rounded-pill">
+                    Conheça o projeto
+                </button>
 
-    <div class="card">
-        <h2>♿ Acessibilidade</h2>
-        <p>
-            Criamos experiências digitais
-            para todos.
-        </p>
-    </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="container py-5">
+        <div class="row g-4 justify-content-center">
 
-    <div class="card">
-        <h2>💻 Tecnologia</h2>
-        <p>
-            Utilizamos HTML, CSS e JavaScript.
-        </p>
-    </div>
+            <div class="col-12 col-md-4">
+                <div class="card h-100 shadow border-0 rounded-4 p-3">
+                    <div class="card-body">
+                        <h2 class="h4">♿ Acessibilidade</h2>
 
+                        <p class="card-text">
+                            Criamos experiências digitais
+                            para todos.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
-    <div class="card">
-        <h2>🤝 Inclusão</h2>
-        <p>
-            Tecnologia aproximando pessoas.
-        </p>
-    </div>
+            <div class="col-12 col-md-4">
+                <div class="card h-100 shadow border-0 rounded-4 p-3">
+                    <div class="card-body">
+                        <h2 class="h4">💻 Tecnologia</h2>
 
-</section>
+                        <p class="card-text">
+                            Utilizamos HTML, CSS e JavaScript.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
+            <div class="col-12 col-md-4">
+                <div class="card h-100 shadow border-0 rounded-4 p-3">
+                    <div class="card-body">
+                        <h2 class="h4">🤝 Inclusão</h2>
 
-<footer>
-    © 2026 INSEP Acessível
-</footer>
+                        <p class="card-text">
+                            Tecnologia aproximando pessoas.
+                        </p>
+                    </div>
+                </div>
+            </div>
 
+        </div>
+    </section>
 
-<script src="js/script.js"></script>
+    <footer>
+        © 2026 INSEP Acessível
+    </footer>
 
-</body>
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="js/script.js"></script>
+
+    </body>
 </html>
