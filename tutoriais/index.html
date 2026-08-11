@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acessível</title>
+
+    <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+    rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+    <body>
+
+    <header>
+        <div class="container py-3">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Logo INSEP Acessível"> Acessível
+                </div>
+
+                <nav class="d-flex flex-wrap gap-3">
+                    <a href="index.html" class="text-white text-decoration-none">
+                        Home
+                    </a>
+
+                    <a href="#" class="text-white text-decoration-none">
+                        Sobre
+                    </a>
+
+                    <a href="#" class="text-white text-decoration-none">
+                        Serviços
+                    </a>
+
+                    <a href="tutoriais/index.html" class="text-white text-decoration-none">
+                        Tutoriais
+                    </a>
+
+                    <a href="#" class="text-white text-decoration-none">
+                        Contato
+                    </a>
+                </nav>
+
+                <div class="acoes d-flex align-items-center gap-2">
+                    <a class="btn btn-light" href="login/index.html">
+                        Entrar
+                    </a>
+
+                    <button id="tema" class="btn btn-light" aria-label="Alternar tema">
+                        🌙
+                    </button>
+
+                    <button id="voz" class="btn btn-light" aria-label="Ativar leitura por voz">
+                        🔊
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <section class="banner text-white py-5">
+        <div class="container">
+
+            <div class="row align-items-center">
+
+                <!-- Texto -->
+                <div class="col-md-7">
+
+                    <h1 class="fw-bold mb-3">
+                        Instalação do Git
+                    </h1>
+
+                    <p class="lead">
+                        Antes de começar a trabalhar com o projeto, 
+                        você precisa instalar o Git no seu computador.
+                    </p>
+
+                    <h3 class="mt-4">
+                        💻 Passo 1 — Baixe o Git
+                    </h3>
+
+                    <p>
+                        Acesse o site oficial do Git e baixe a versão
+                        adequada para o seu computador.
+                    </p>
+
+                    <a 
+                        href="https://git-scm.com/install/windows"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        class="btn btn-light fw-bold"
+                    >
+                        Baixar Git para Windows
+                    </a>
+
+                </div>
+
+                <!-- Imagem -->
+                <div class="col-md-5 text-center mt-4 mt-md-0">
+
+                    <img
+                        src="images/image.png"
+                        alt="Tutorial mostrando a instalação do Git"
+                        class="img-fluid tutorial-img"
+                        data-bs-toggle="modal"
+                        data-bs-target="#imagemGitModal"
+                    >
+
+                    <p class="small mt-2">
+                        👆 Clique na imagem para ampliar
+                    </p>
+
+                </div>
+
+            </div>
+
+            <!-- Tutorial -->
+            <div class="mt-5">
+
+                <h2 class="fw-bold mb-4">
+                    📚 Tutorial: Como instalar o Git
+                </h2>
+
+                <div class="tutorial-step mb-4">
+                    <h4>1️⃣ Baixe o Git</h4>
+
+                    <p>
+                        Acesse o site oficial e clique na opção de download
+                        para Windows.
+                    </p>
+                </div>
+
+                <div class="tutorial-step mb-4">
+                    <h4>2️⃣ Abra o instalador</h4>
+
+                    <p>
+                        Depois que o download terminar, abra o arquivo
+                        baixado para iniciar a instalação.
+                    </p>
+                </div>
+
+                <div class="tutorial-step mb-4">
+                    <h4>3️⃣ Siga a instalação</h4>
+
+                    <p>
+                        Durante a instalação, você pode manter as opções
+                        recomendadas pelo instalador e avançar até concluir.
+                    </p>
+                </div>
+
+                <div class="tutorial-step mb-4">
+                    <h4>4️⃣ Verifique se o Git foi instalado</h4>
+
+                    <p>
+                        Abra o <strong>Git Bash</strong> ou o
+                        <strong>Prompt de Comando</strong> e digite:
+                    </p>
+
+                    <pre><code>git --version</code></pre>
+
+                    <p>
+                        Se aparecer a versão do Git, a instalação foi concluída
+                        corretamente.
+                    </p>
+                </div>
+
+                <div class="tutorial-step">
+                    <h4>5️⃣ Configure seu nome e e-mail</h4>
+
+                    <p>
+                        Agora configure seu nome e o e-mail que você utiliza
+                        no Git.
+                    </p>
+
+                    <pre><code>git config --global user.name "Seu Nome"
+    git config --global user.email "seu@email.com"</code></pre>
+
+                    <p>
+                        Essas informações serão utilizadas nos seus commits.
+                    </p>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+
+    <!-- Modal da imagem -->
+    <div 
+        class="modal fade"
+        id="imagemGitModal"
+        tabindex="-1"
+        aria-labelledby="imagemGitModalLabel"
+        aria-hidden="true"
+    >
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+
+            <div class="modal-content">
+
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imagemGitModalLabel">
+                        Tutorial de instalação do Git
+                    </h5>
+
+                    <button 
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar"
+                    ></button>
+                </div>
+
+                <div class="modal-body text-center">
+
+                    <img
+                        src="images/image.png"
+                        alt="Imagem ampliada do tutorial de instalação do Git"
+                        class="img-fluid"
+                    >
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    <footer>
+        © 2026 INSEP Acessível
+    </footer>
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
+    </script>
+
+    <script src="js/script.js"></script>
+
+    </body>
+</html>

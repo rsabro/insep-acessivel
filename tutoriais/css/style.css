@@ -1,0 +1,29 @@
+.tutorial-img {
+    width: 280px;
+    max-width: 100%;
+    cursor: pointer;
+    border-radius: 12px;
+    transition: transform 0.3s ease;
+}
+
+.tutorial-img:hover {
+    transform: scale(1.05);
+}
+
+.tutorial-step {
+    padding: 20px;
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+pre {
+    background: #111;
+    color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    overflow-x: auto;
+}
+
+pre code {
+    color: #fff;
+}
