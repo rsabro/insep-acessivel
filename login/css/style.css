@@ -1,0 +1,196 @@
+/* RESET E ESTILOS GERAIS */
+* {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #f5f7fb;
+    color: #222;
+    transition: background 0.3s, color 0.3s;
+}
+
+/* HEADER E FOOTER */
+header {
+    background: #0057b8;
+    color: white;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+.acoes button {
+    border: none;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #0057b8;
+    color: white;
+}
+
+/* CARD DE LOGIN CENTRALIZADO */
+.login-container {
+    width: 100%;
+    max-width: 420px;
+    padding: 0 20px;
+}
+
+.login-box {
+    background: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    transition: background 0.3s, color 0.3s;
+}
+
+.login-box h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #0057b8;
+    font-weight: bold;
+}
+
+/* CAMPOS DE ENTRADA */
+.input-field {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.input-field input {
+    width: 100%;
+    padding: 12px 40px 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    outline: none;
+    font-size: 14px;
+    background-color: transparent;
+    color: inherit;
+    transition: border-color 0.3s;
+}
+
+.input-field input:focus {
+    border-color: #0057b8;
+}
+
+.input-field i {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 18px;
+}
+
+/* LEMBRAR E ESQUECEU A SENHA */
+.remember-forget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.remember-forget a {
+    color: #0057b8;
+    text-decoration: none;
+}
+
+.remember-forget a:hover {
+    text-decoration: underline;
+}
+
+/* BOTÃO DE SUBMIT */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: #0057b8;
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.btn-login:hover {
+    background: #00418a;
+}
+
+/* LINK DE CADASTRO */
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 13px;
+    color: #555;
+}
+
+.register-link a {
+    color: #0057b8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-link a:hover {
+    text-decoration: underline;
+}
+
+/* MODO ESCURO (DARK MODE) */
+.dark {
+    background: #121212;
+    color: white;
+}
+
+.dark header,
+.dark footer {
+    background: #000 !important;
+}
+
+.dark nav a {
+    color: white !important;
+}
+
+.dark .login-box {
+    background: #1e1e1e;
+    color: white;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+.dark .login-box h2 {
+    color: #4da6ff;
+}
+
+.dark .input-field input {
+    border-color: #444;
+    color: #fff;
+}
+
+.dark .input-field input:focus {
+    border-color: #4da6ff;
+}
+
+.dark .input-field i,
+.dark .remember-forget,
+.dark .register-link {
+    color: #ccc;
+}
+
+.dark .remember-forget a,
+.dark .register-link a {
+    color: #4da6ff;
+}
+
+.dark .btn-login {
+    background: #0057b8;
+}
+
+.dark .btn-login:hover {
+    background: #00418a;
+}
