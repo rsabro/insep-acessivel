@@ -1,8 +1,8 @@
 body {
   font-family: Arial, sans-serif;
   background: linear-gradient(135deg, #007BFF, #20C997 );
-  height: 100vh;
-  display: flex;
+  /* height: 100vh; */
+  /* display: flex; */
   justify-content: center;
   align-items: center;
   margin: 0;
@@ -96,4 +96,16 @@ button:hover {
     font-size: 1em;
     padding: 14px;
   }
+}
+main {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cadastro-container {
+  width: 100%;
+  max-width: 450px;
+  margin: 0 auto;
 }
