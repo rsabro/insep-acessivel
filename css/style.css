@@ -67,3 +67,30 @@ footer{
     background:#0057b8;
     color:white;
 }
+
+/* Menu */
+.menu-link {
+    display: inline-block;
+    padding: 10px 16px;
+    border-radius: 8px;
+
+    color: white;
+    text-decoration: none;
+
+    background: transparent;
+
+    transition: 0.3s;
+}
+
+/* Quando passar o mouse */
+.menu-link:hover {
+    background: #87ceeb;
+    color: #003b73;
+}
+
+/* Link selecionado */
+.menu-link.ativo {
+    background: #87ceeb;
+    color: #003b73;
+    font-weight: bold;
+}
