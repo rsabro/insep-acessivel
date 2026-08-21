@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSEP Acessível</title>
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <!-- CSS principal -->
+    <link rel="stylesheet" href="../css/style.css">
+        <link rel="stylesheet" href="css/documentacao.css">
+
+</head>
+
+<body>
+    <header>
+        <div class="container py-3">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div class="logo d-flex align-items-center">
+                    <img src="../images/logo.png" alt="Logo INSEP Acessível" >
+                    <span>Acessível</span>
+                </div>
+                <nav class="d-flex flex-wrap gap-3" aria-label="Menu principal">
+                  <a href="../index.html" class="menu-link">Home</a>
+                    <a href="#" class="menu-link">Sobre</a>
+                    <a href="#" class="menu-link">Serviços</a>
+                    <a href="../tutoriais/index.html" class="menu-link">Tutoriais</a>
+                    <a href="documentacao/index.html" class="menu-link ativo">Documentação</a>
+                    <a href="#" class="menu-link">Contato</a>
+                </nav>
+                <div class="acoes d-flex align-items-center gap-2">
+                    <a class="btn btn-light" href="../login/index.html">Login</a>
+                    <button type="button" id="tema" class="btn btn-light" aria-label="Alternar entre modo claro e escuro" title="Alternar tema" > 🌙 </button>
+                    <button type="button" id="voz" class="btn btn-light" aria-label="Ativar leitura por voz" title="Ativar leitura por voz" > 🔊 </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <main class="documentacao">
+
+        <div class="container">
+
+            <div class="row g-4">
+
+                <!-- MENU LATERAL -->
+                <aside class="col-lg-3">
+
+                    <div class="doc-menu">
+
+                        <h2>
+                            <i class="fa-solid fa-book"></i>
+                            Documentação
+                        </h2>
+
+                        <p class="doc-subtitulo">
+                            Equipe Front-End
+                        </p>
+
+                        <nav aria-label="Índice da documentação">
+                            <a href="#visao-geral" class="ativo">1. Visão geral</a>
+                            <a href="#tecnologias">2. Tecnologias</a>
+                            <a href="#estrutura">3. Estrutura do site</a>
+                            <a href="#acessibilidade">4. Acessibilidade</a>
+                            <a href="#fluxos">5. Fluxos principais</a>
+                            <a href="#arquivos">6. Organização de arquivos</a>
+                            <a href="#git">7. Git e GitHub</a>
+                            <a href="#pull-request">8. Pull Request</a>
+                            <a href="#commits">9. Commits</a>
+                            <a href="#backend">10. Back-end</a>
+                            <a href="#validacao">11. Validação</a>
+                            <a href="#testes">12. Testes</a>
+                            <a href="#aceite">13. Critérios de aceite</a>
+                            <a href="#responsabilidades">14. Responsabilidades</a>
+                            <a href="#entregaveis">15. Entregáveis</a>
+                            <a href="#conclusao">16. Conclusão</a>
+                        </nav>
+
+                    </div>
+
+                </aside>
+
+
+                <!-- DOCUMENTAÇÃO -->
+                <section class="col-lg-9">
+
+                    <!-- CAPA -->
+                    <div class="doc-capa">
+
+                        <span class="badge-documentacao">
+                            DOCUMENTAÇÃO TÉCNICA
+                        </span>
+
+                        <h1>
+                            INSEP Acessível
+                        </h1>
+
+                        <h2>
+                            Equipe Front-End
+                        </h2>
+
+                        <p>
+                            Documentação técnica do desenvolvimento,
+                            organização, acessibilidade e fluxo de trabalho
+                            da equipe Front-End.
+                        </p>
+
+                        <div class="linha-capa"></div>
+
+                        <h3>
+                            Integrantes
+                        </h3>
+
+                        <div class="integrantes">
+
+                            <span>Carol Raia</span>
+                            <span>Daniel Dosadi</span>
+                            <span>Felipe Pavan</span>
+                            <span>Jessica Souza</span>
+                            <span>Luiza Maltez</span>
+                            <span>Marcos Campos</span>
+                            <span>Patricia Bezerra</span>
+                            <span>Regis Romão</span>
+                            <span>Rodrigo Sabro</span>
+
+                        </div>
+
+                        <div class="stack-info">
+
+                            <div>
+                                <strong>Stack:</strong>
+                                HTML5, CSS3 e JavaScript
+                            </div>
+
+                            <div>
+                                <strong>Controle:</strong>
+                                Git + GitHub
+                            </div>
+
+                            <div>
+                                <strong>Publicação:</strong>
+                                GitHub Pages
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- 1 -->
+                    <article id="visao-geral" class="doc-section">
+
+                        <span class="numero">01</span>
+
+                        <h2>Visão geral do Front-End</h2>
+
+                        <p>
+                            O Front-End do INSEP Acessível é responsável pela
+                            camada visual e interativa do sistema.
+                        </p>
+
+                        <p>
+                            A equipe transforma os requisitos e protótipos
+                            em páginas funcionais, responsivas e acessíveis.
+                        </p>
+
+                        <div class="info-box">
+                            <i class="fa-solid fa-circle-info"></i>
+
+                            <p>
+                                O Front-End coleta e valida informações,
+                                apresenta respostas ao usuário e se comunica
+                                com o Back-End por meio de APIs.
+                            </p>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 2 -->
+                    <article id="tecnologias" class="doc-section">
+
+                        <span class="numero">02</span>
+
+                        <h2>Tecnologias e ferramentas</h2>
+
+                        <div class="tech-grid">
+
+                            <div class="tech-card">
+                                <i class="fa-brands fa-html5"></i>
+                                <h3>HTML5</h3>
+                                <p>Estrutura semântica das páginas.</p>
+                            </div>
+
+                            <div class="tech-card">
+                                <i class="fa-brands fa-css3-alt"></i>
+                                <h3>CSS3</h3>
+                                <p>Layout, responsividade e identidade visual.</p>
+                            </div>
+
+                            <div class="tech-card">
+                                <i class="fa-brands fa-js"></i>
+                                <h3>JavaScript</h3>
+                                <p>Interações e comportamento dinâmico.</p>
+                            </div>
+
+                            <div class="tech-card">
+                                <i class="fa-brands fa-bootstrap"></i>
+                                <h3>Bootstrap</h3>
+                                <p>Apoio à construção responsiva.</p>
+                            </div>
+
+                            <div class="tech-card">
+                                <i class="fa-brands fa-github"></i>
+                                <h3>Git + GitHub</h3>
+                                <p>Controle de versão e colaboração.</p>
+                            </div>
+
+                            <div class="tech-card">
+                                <i class="fa-solid fa-globe"></i>
+                                <h3>GitHub Pages</h3>
+                                <p>Publicação da versão web.</p>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 3 -->
+                    <article id="estrutura" class="doc-section">
+
+                        <span class="numero">03</span>
+
+                        <h2>Estrutura funcional do site</h2>
+
+                        <p>
+                            O sistema possui as seguintes áreas principais:
+                        </p>
+
+                        <div class="lista-tags">
+
+                            <span>Home</span>
+                            <span>Sobre</span>
+                            <span>Serviços</span>
+                            <span>Tutoriais</span>
+                            <span>Documentação</span>
+                            <span>Contato</span>
+                            <span>Login</span>
+                            <span>Cadastro</span>
+                            <span>Esqueci minha senha</span>
+                            <span>Perfil</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 4 -->
+                    <article id="acessibilidade" class="doc-section">
+
+                        <span class="numero">04</span>
+
+                        <h2>Acessibilidade como requisito</h2>
+
+                        <p>
+                            A acessibilidade faz parte da definição da
+                            interface, implementação e testes.
+                        </p>
+
+                        <ul class="check-list">
+
+                            <li>HTML semântico e estrutura lógica de títulos.</li>
+
+                            <li>Navegação completa por teclado.</li>
+
+                            <li>Foco visível em links, botões e campos.</li>
+
+                            <li>Textos alternativos adequados para imagens.</li>
+
+                            <li>Labels associados corretamente aos campos.</li>
+
+                            <li>Mensagens de erro claras e perceptíveis.</li>
+
+                            <li>Contraste adequado entre texto e fundo.</li>
+
+                            <li>Compatibilidade com zoom e diferentes telas.</li>
+
+                            <li>Modo claro e escuro.</li>
+
+                            <li>Recursos de acessibilidade e Libras.</li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- 5 -->
+                    <article id="fluxos" class="doc-section">
+
+                        <span class="numero">05</span>
+
+                        <h2>Fluxos principais</h2>
+
+                        <div class="fluxo">
+
+                            <strong>Cadastro</strong>
+
+                            <span>Cadastro</span>
+                            →
+                            <span>Validação</span>
+                            →
+                            <span>Confirmação</span>
+                            →
+                            <span>Login</span>
+
+                        </div>
+
+                        <div class="fluxo">
+
+                            <strong>Recuperação</strong>
+
+                            <span>Login</span>
+                            →
+                            <span>Esqueci minha senha</span>
+                            →
+                            <span>E-mail</span>
+                            →
+                            <span>Nova senha</span>
+                            →
+                            <span>Login</span>
+
+                        </div>
+
+                        <div class="fluxo">
+
+                            <strong>Erro</strong>
+
+                            <span>Ação</span>
+                            →
+                            <span>Validação</span>
+                            →
+                            <span>Mensagem</span>
+                            →
+                            <span>Correção</span>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 6 -->
+                    <article id="arquivos" class="doc-section">
+
+                        <span class="numero">06</span>
+
+                        <h2>Organização de arquivos</h2>
+
+                        <p>
+                            A estrutura deve ser simples e consistente.
+                        </p>
+
+                        <pre><code>insep-acessivel/
+    ├── index.html
+    ├── cadastro/
+    ├── login/
+    ├── esqueceusenha/
+    ├── perfil/
+    ├── tutoriais/
+    ├── documentacao/
+    ├── css/
+    ├── js/
+    └── assets/</code></pre>
+
+                    </article>
+
+
+                    <!-- 7 -->
+                    <article id="git" class="doc-section">
+
+                        <span class="numero">07</span>
+
+                        <h2>Organização com Git e GitHub</h2>
+
+                        <p>
+                            O Git mantém o histórico das alterações e permite
+                            que a equipe trabalhe em paralelo.
+                        </p>
+
+                        <div class="git-fluxo">
+
+                            <span>main</span>
+                            →
+                            <span>homolog</span>
+                            →
+                            <span>develop</span>
+                            →
+                            <span>feature/*</span>
+
+                        </div>
+
+                        <ul>
+                            <li><strong>feature/*:</strong> desenvolvimento de uma funcionalidade.</li>
+                            <li><strong>develop:</strong> integração das funcionalidades.</li>
+                            <li><strong>homolog:</strong> validação antes da publicação.</li>
+                            <li><strong>main:</strong> versão estável/publicada.</li>
+                        </ul>
+
+                        <p>Exemplos:</p>
+
+                        <div class="codigo-tags">
+                            <span>feature/login</span>
+                            <span>feature/cadastro</span>
+                            <span>feature/home</span>
+                            <span>feature/perfil</span>
+                            <span>feature/acessibilidade</span>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 8 -->
+                    <article id="pull-request" class="doc-section">
+
+                        <span class="numero">08</span>
+
+                        <h2>Pull Request e revisão</h2>
+
+                        <ol>
+                            <li>Criar uma branch para a funcionalidade.</li>
+                            <li>Desenvolver e testar localmente.</li>
+                            <li>Fazer commits objetivos.</li>
+                            <li>Enviar a branch para o GitHub.</li>
+                            <li>Abrir Pull Request para develop.</li>
+                            <li>Outro integrante revisa o código.</li>
+                            <li>Corrigir problemas apontados.</li>
+                            <li>Realizar o merge após aprovação.</li>
+                            <li>Testar a integração.</li>
+                            <li>Publicar em main após validação.</li>
+                        </ol>
+
+                    </article>
+
+
+                    <!-- 9 -->
+                    <article id="commits" class="doc-section">
+
+                        <span class="numero">09</span>
+
+                        <h2>Padrão de commits</h2>
+
+                        <div class="commit">
+
+                            <code>feat: adiciona validação no cadastro</code>
+
+                            <code>fix: corrige mensagem de erro do login</code>
+
+                            <code>style: ajusta responsividade da home</code>
+
+                            <code>docs: atualiza documentação</code>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 10 -->
+                    <article id="backend" class="doc-section">
+
+                        <span class="numero">10</span>
+
+                        <h2>Integração com o Back-End</h2>
+
+                        <p>
+                            O Front-End deve alinhar com o Back-End quais
+                            endpoints, campos, respostas e códigos HTTP serão utilizados.
+                        </p>
+
+                        <div class="api-box">
+                            <code>POST /login</code>
+                            <code>POST /usuarios</code>
+                            <code>POST /recuperar-senha</code>
+                            <code>GET /perfil</code>
+                        </div>
+
+                    </article>
+
+
+                    <!-- 11 -->
+                    <article id="validacao" class="doc-section">
+
+                        <span class="numero">11</span>
+
+                        <h2>Validação de formulários</h2>
+
+                        <ul class="check-list">
+
+                            <li>Campo obrigatório vazio.</li>
+                            <li>E-mail inválido.</li>
+                            <li>Credenciais incorretas.</li>
+                            <li>Cadastro duplicado.</li>
+                            <li>Mensagens acessíveis para tecnologias assistivas.</li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- 12 -->
+                    <article id="testes" class="doc-section">
+
+                        <span class="numero">12</span>
+
+                        <h2>Testes do Front-End</h2>
+
+                        <ul class="check-list">
+
+                            <li>Navegação com teclado.</li>
+                            <li>Foco e ordem de navegação.</li>
+                            <li>Formulários e mensagens de erro.</li>
+                            <li>Celular, tablet e desktop.</li>
+                            <li>Zoom e redimensionamento.</li>
+                            <li>Links, botões, menus e modais.</li>
+                            <li>Imagens e textos alternativos.</li>
+                            <li>Contraste e legibilidade.</li>
+                            <li>Recursos de acessibilidade.</li>
+                            <li>Versão integrada após merge.</li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- 13 -->
+                    <article id="aceite" class="doc-section">
+
+                        <span class="numero">13</span>
+
+                        <h2>Critérios de aceite</h2>
+
+                        <ul class="check-list">
+
+                            <li>A página abre sem erros.</li>
+                            <li>Elementos utilizáveis por teclado.</li>
+                            <li>Formulários apresentam validações claras.</li>
+                            <li>Botões e links possuem nomes compreensíveis.</li>
+                            <li>Layout adaptável a diferentes telas.</li>
+                            <li>Alterações passam por revisão.</li>
+                            <li>Funcionalidade testada antes da publicação.</li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- 14 -->
+                    <article id="responsabilidades" class="doc-section">
+
+                        <span class="numero">14</span>
+
+                        <h2>Divisão de responsabilidades</h2>
+
+                        <div class="responsabilidade-grid">
+
+                            <div>
+                                <h3>PO Front-End</h3>
+                                <p>
+                                    Organizar backlog, acompanhar tarefas,
+                                    alinhar requisitos e priorizar entregas.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>Desenvolvimento</h3>
+                                <p>
+                                    Implementar páginas, estilos, JavaScript
+                                    e integrações.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>Acessibilidade</h3>
+                                <p>
+                                    Revisar teclado, foco, semântica,
+                                    formulários e contraste.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>QA / Validação</h3>
+                                <p>
+                                    Executar testes funcionais, responsivos
+                                    e de acessibilidade.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>Git / GitHub</h3>
+                                <p>
+                                    Organizar branches, Pull Requests,
+                                    revisão e homologação.
+                                </p>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- 15 -->
+                    <article id="entregaveis" class="doc-section">
+
+                        <span class="numero">15</span>
+
+                        <h2>Entregáveis</h2>
+
+                        <ul class="check-list">
+
+                            <li>Site funcional e responsivo.</li>
+                            <li>Páginas principais implementadas.</li>
+                            <li>Formulários com validação.</li>
+                            <li>Recursos de acessibilidade.</li>
+                            <li>Código organizado no GitHub.</li>
+                            <li>Histórico de alterações por Git.</li>
+                            <li>Pull Requests e revisão.</li>
+                            <li>Versão de homologação.</li>
+                            <li>Versão estável publicada.</li>
+
+                        </ul>
+
+                    </article>
+
+
+                    <!-- 16 -->
+                    <article id="conclusao" class="doc-section conclusao">
+
+                        <span class="numero">16</span>
+
+                        <h2>Conclusão</h2>
+
+                        <p>
+                            A estratégia da equipe Front-End é transformar
+                            os requisitos do projeto em uma experiência web
+                            acessível, organizada e testável.
+                        </p>
+
+                        <p>
+                            O foco está na interface, experiência do usuário,
+                            acessibilidade, validação, integração com APIs
+                            e qualidade da entrega.
+                        </p>
+
+                        <div class="mensagem-final">
+
+                            <i class="fa-solid fa-quote-left"></i>
+
+                            <p>
+                                Nosso foco como equipe Front-end não é apenas
+                                fazer a página funcionar. É fazer com que o
+                                usuário consiga realmente utilizar o sistema,
+                                inclusive pessoas que dependem de recursos
+                                de acessibilidade.
+                            </p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+            </div>
+
+        </div>
+
+    </main>
+    <footer>© 2026 INSEP Acessível</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/script.js"></script>
+    <script src="js/documentacao.js"></script>
+</body>
+</html>

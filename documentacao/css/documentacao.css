@@ -1,0 +1,742 @@
+/* ========================================
+   DOCUMENTAÇÃO INSEP ACESSÍVEL
+======================================== */
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #f4f7fb;
+}
+
+
+/* ========================================
+   CONTAINER
+======================================== */
+
+.documentacao {
+    padding: 50px 0;
+}
+
+.documentacao-container {
+    max-width: 1200px;
+    margin: auto;
+}
+
+
+/* ================================
+   MENU LATERAL
+================================ */
+
+.doc-menu {
+    position: sticky;
+    top: 20px;
+    padding: 20px;
+    background: #fff;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.doc-menu h2 {
+    color: #0057b8;
+    font-size: 22px;
+    margin-bottom: 5px;
+}
+
+.doc-menu h2 i {
+    margin-right: 8px;
+}
+
+.doc-subtitulo {
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Lista do menu */
+.doc-menu nav {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Quadrado de cada item */
+.doc-menu nav a {
+    display: block;
+    padding: 12px 14px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background: #f4f7fb;
+    color: #333;
+    text-decoration: none;
+    font-size: 14px;
+    transition: 0.25s;
+}
+
+/* Quando passar o mouse */
+.doc-menu nav a:hover {
+    background: #e5f3ff;
+    border-color: #8dccff;
+    color: #0057b8;
+    transform: translateX(3px);
+}
+
+/* Quadrado selecionado */
+.doc-menu nav a.ativo {
+    background: #b9e3ff;
+    border-color: #0057b8;
+    color: #003b73;
+    font-weight: bold;
+    box-shadow: inset 4px 0 0 #0057b8;
+}
+
+/* Acessibilidade - teclado */
+.doc-menu nav a:focus {
+    outline: 3px solid #ffbf00;
+    outline-offset: 2px;
+}
+
+
+/* ========================================
+   CAPA
+======================================== */
+
+.doc-capa {
+    background: linear-gradient(
+        135deg,
+        #0057b8,
+        #008f75
+    );
+
+    color: white;
+
+    border-radius: 18px;
+
+    padding: 45px;
+
+    margin-bottom: 30px;
+
+    box-shadow: 0 10px 30px rgba(0, 87, 184, 0.2);
+}
+
+.badge-documentacao {
+    display: inline-block;
+
+    background: rgba(255, 255, 255, 0.18);
+
+    padding: 7px 13px;
+
+    border-radius: 20px;
+
+    font-size: 13px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+.doc-capa h1 {
+    font-size: 42px;
+    font-weight: 700;
+
+    margin-top: 20px;
+}
+
+.doc-capa h2 {
+    font-size: 25px;
+}
+
+.doc-capa p {
+    font-size: 17px;
+
+    max-width: 750px;
+
+    line-height: 1.7;
+}
+
+.linha-capa {
+    height: 1px;
+
+    background: rgba(255, 255, 255, 0.3);
+
+    margin: 30px 0;
+}
+
+.doc-capa h3 {
+    font-size: 20px;
+}
+
+.integrantes {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 15px;
+}
+
+.integrantes span {
+    background: rgba(255, 255, 255, 0.15);
+
+    padding: 7px 12px;
+
+    border-radius: 20px;
+}
+
+.stack-info {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 15px;
+
+    margin-top: 30px;
+}
+
+.stack-info div {
+    background: rgba(0, 0, 0, 0.12);
+
+    padding: 15px;
+
+    border-radius: 10px;
+}
+
+
+/* ========================================
+   SEÇÕES
+======================================== */
+
+.doc-section {
+    background: white;
+
+    border-radius: 16px;
+
+    padding: 35px;
+
+    margin-bottom: 25px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
+    scroll-margin-top: 30px;
+}
+
+.numero {
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 42px;
+    height: 42px;
+
+    border-radius: 50%;
+
+    background: #e5f3ff;
+
+    color: #0057b8;
+
+    font-weight: bold;
+
+    margin-bottom: 10px;
+}
+
+.doc-section h2 {
+    color: #0057b8;
+
+    font-size: 27px;
+
+    margin-bottom: 18px;
+}
+
+.doc-section p {
+    line-height: 1.7;
+
+    color: #444;
+}
+
+
+/* ========================================
+   INFO BOX
+======================================== */
+
+.info-box {
+    display: flex;
+
+    gap: 15px;
+
+    align-items: flex-start;
+
+    background: #e9f6ff;
+
+    border-left: 5px solid #0057b8;
+
+    padding: 18px;
+
+    border-radius: 8px;
+
+    margin-top: 20px;
+}
+
+.info-box i {
+    color: #0057b8;
+
+    font-size: 22px;
+}
+
+.info-box p {
+    margin: 0;
+}
+
+
+/* ========================================
+   TECNOLOGIAS
+======================================== */
+
+.tech-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.tech-card {
+    border: 1px solid #e4e8ed;
+
+    border-radius: 12px;
+
+    padding: 20px;
+
+    transition: 0.2s;
+}
+
+.tech-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+.tech-card i {
+    font-size: 30px;
+
+    color: #0057b8;
+
+    margin-bottom: 10px;
+}
+
+.tech-card h3 {
+    font-size: 18px;
+}
+
+.tech-card p {
+    margin: 0;
+}
+
+
+/* ========================================
+   TAGS
+======================================== */
+
+.lista-tags,
+.codigo-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.lista-tags span {
+    background: #e5f3ff;
+
+    color: #0057b8;
+
+    padding: 9px 14px;
+
+    border-radius: 20px;
+
+    font-weight: 600;
+}
+
+.codigo-tags span {
+    background: #222;
+
+    color: #fff;
+
+    padding: 8px 12px;
+
+    border-radius: 6px;
+
+    font-family: monospace;
+}
+
+
+/* ========================================
+   CHECK LIST
+======================================== */
+
+.check-list {
+    list-style: none;
+
+    padding: 0;
+
+    margin: 0;
+}
+
+.check-list li {
+    position: relative;
+
+    padding: 10px 10px 10px 32px;
+
+    line-height: 1.5;
+}
+
+.check-list li::before {
+    content: "✓";
+
+    position: absolute;
+
+    left: 0;
+
+    color: #008f75;
+
+    font-weight: bold;
+
+    font-size: 18px;
+}
+
+
+/* ========================================
+   FLUXOS
+======================================== */
+
+.fluxo {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 15px;
+
+    background: #f5f8fb;
+
+    border-radius: 10px;
+
+    margin-bottom: 12px;
+}
+
+.fluxo strong {
+    color: #0057b8;
+
+    margin-right: 8px;
+}
+
+.fluxo span {
+    background: white;
+
+    border: 1px solid #dce3ea;
+
+    padding: 7px 10px;
+
+    border-radius: 6px;
+}
+
+
+/* ========================================
+   CÓDIGO
+======================================== */
+
+pre {
+    background: #1e1e1e;
+
+    color: #f5f5f5;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    overflow-x: auto;
+}
+
+code {
+    font-family: Consolas, monospace;
+}
+
+
+/* ========================================
+   GIT
+======================================== */
+
+.git-fluxo {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 10px;
+
+    background: #f5f8fb;
+
+    padding: 20px;
+
+    border-radius: 10px;
+
+    margin: 20px 0;
+}
+
+.git-fluxo span {
+    background: #0057b8;
+
+    color: white;
+
+    padding: 9px 15px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   COMMITS
+======================================== */
+
+.commit {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+.commit code {
+    background: #1e1e1e;
+
+    color: #e8e8e8;
+
+    padding: 13px;
+
+    border-radius: 7px;
+}
+
+
+/* ========================================
+   API
+======================================== */
+
+.api-box {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+}
+
+.api-box code {
+    background: #eef6ff;
+
+    color: #0057b8;
+
+    padding: 10px 14px;
+
+    border-radius: 7px;
+
+    font-weight: bold;
+}
+
+
+/* ========================================
+   RESPONSABILIDADES
+======================================== */
+
+.responsabilidade-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 15px;
+}
+
+.responsabilidade-grid div {
+    border: 1px solid #e4e8ed;
+
+    padding: 20px;
+
+    border-radius: 10px;
+}
+
+.responsabilidade-grid h3 {
+    font-size: 18px;
+
+    color: #0057b8;
+}
+
+
+/* ========================================
+   MENSAGEM FINAL
+======================================== */
+
+.mensagem-final {
+    background: linear-gradient(
+        135deg,
+        #0057b8,
+        #008f75
+    );
+
+    color: white;
+
+    padding: 30px;
+
+    border-radius: 12px;
+
+    margin-top: 25px;
+}
+
+.mensagem-final i {
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.mensagem-final p {
+    color: white;
+
+    font-size: 18px;
+
+    margin: 0;
+
+    font-weight: 500;
+}
+
+
+/* ========================================
+   DARK MODE
+======================================== */
+
+.dark .documentacao {
+    background: #121212;
+}
+
+.dark .doc-menu,
+.dark .doc-section {
+    background: #1e1e1e;
+
+    color: white;
+}
+
+.dark .doc-menu nav a {
+    color: #ddd;
+}
+
+.dark .doc-menu nav a:hover {
+    background: #333;
+
+    color: #8dccff;
+}
+
+.dark .doc-section h2 {
+    color: #8dccff;
+}
+
+.dark .doc-section p,
+.dark .responsabilidade-grid p {
+    color: #ddd;
+}
+
+.dark .tech-card,
+.dark .responsabilidade-grid div {
+    border-color: #444;
+}
+
+.dark .tech-card i {
+    color: #8dccff;
+}
+
+.dark .fluxo {
+    background: #292929;
+}
+
+.dark .fluxo span {
+    background: #333;
+
+    color: white;
+
+    border-color: #555;
+}
+
+.dark .lista-tags span {
+    background: #163c5c;
+
+    color: #9bd5ff;
+}
+
+.dark .api-box code {
+    background: #163c5c;
+
+    color: #9bd5ff;
+}
+
+.dark .numero {
+    background: #163c5c;
+
+    color: #9bd5ff;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 991px) {
+
+    .doc-menu {
+        position: static;
+    }
+
+    .stack-info {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+@media (max-width: 768px) {
+
+    .documentacao {
+        padding: 25px 0;
+    }
+
+    .doc-capa {
+        padding: 30px 20px;
+    }
+
+    .doc-capa h1 {
+        font-size: 32px;
+    }
+
+    .doc-section {
+        padding: 25px 20px;
+    }
+
+    .tech-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .responsabilidade-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .fluxo {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+}
