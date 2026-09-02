@@ -16,3 +16,21 @@ window.addEventListener("scroll", () => {
         }
     });
 });
+
+
+const librasModal = document.getElementById('librasModal');
+
+librasModal.addEventListener('show.bs.modal', function (event) {
+
+    const botao = event.relatedTarget;
+
+    const nome = botao.getAttribute('data-nome');
+    const gif = botao.getAttribute('data-gif');
+
+    document.getElementById('nomeIntegrante').textContent = nome;
+
+    const imagem = document.getElementById('gifLibras');
+
+    imagem.src = gif;
+    imagem.alt = `Sinal em Libras de ${nome}`;
+});

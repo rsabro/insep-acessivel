@@ -11,7 +11,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <!-- CSS principal -->
     <link rel="stylesheet" href="../css/style.css">
-        <link rel="stylesheet" href="css/documentacao.css">
+        <link rel="stylesheet" href="css/sobre.css">
 
 </head>
 
@@ -25,10 +25,10 @@
                 </div>
                 <nav class="d-flex flex-wrap gap-3" aria-label="Menu principal">
                   <a href="../index.html" class="menu-link">Home</a>
-                    <a href="#" class="menu-link">Sobre</a>
+                    <a href="sobre/index.html" class="menu-link" ativo>Sobre</a>
                     <a href="#" class="menu-link">Serviços</a>
                     <a href="../tutoriais/index.html" class="menu-link">Tutoriais</a>
-                    <a href="documentacao/index.html" class="menu-link ativo">Documentação</a>
+                    <!-- <a href="documentacao/index.html" class="menu-link ativo">Documentação</a> -->
                     <a href="#" class="menu-link">Contato</a>
                 </nav>
                 <div class="acoes d-flex align-items-center gap-2">
@@ -115,17 +115,91 @@
 
                         <div class="integrantes">
 
-                            <span>Caroline Costa</span>
-                            <span>Daniel Dias</span>
-                            <span>Felipe Pavan</span>
-                            <span>Jessica Souza</span>
-                            <span>Luiza Maltez</span>
-                            <span>Marcos Campos</span>
-                            <span>Patricia Bezerra</span>
-                            <span>Regis Romão</span>
-                            <span>Rodrigo Sabro</span>
+    <button class="integrante" data-bs-toggle="modal" data-bs-target="#librasModal"
+        data-nome="Caroline Costa" data-gif="gifs/caroline.gif">
+        Caroline Costa
+    </button>
+
+    <button class="integrante" data-bs-toggle="modal" data-bs-target="#librasModal"
+        data-nome="Daniel Dias" data-gif="gifs/daniel.gif">
+        Daniel Dias
+    </button>
+
+    <button class="integrante" data-bs-toggle="modal" data-bs-target="#librasModal"
+        data-nome="Felipe Pavan" data-gif="gifs/felipe.gif">
+        Felipe Pavan
+    </button>
+
+    <button class="integrante" data-bs-toggle="modal" data-bs-target="#librasModal"
+        data-nome="Jessica Souza" data-gif="gifs/jessica.gif">
+        Jessica Souza
+    </button>
+
+    <button class="integrante" data-bs-toggle="modal" data-bs-target="#librasModal"
+        data-nome="Luiza Maltez" data-gif="gifs/luiza.gif">
+        Luiza Maltez
+    </button>
+
+    <button class="integrante" data-bs-toggle="modal" data-bs-target="#librasModal"
+        data-nome="Marcos Campos" data-gif="gifs/marcos.gif">
+        Marcos Campos
+    </button>
+
+    <button class="integrante" data-bs-toggle="modal" data-bs-target="#librasModal"
+        data-nome="Patricia Bezerra" data-gif="gifs/patricia.gif">
+        Patricia Bezerra
+    </button>
+
+    <button class="integrante" data-bs-toggle="modal" data-bs-target="#librasModal"
+        data-nome="Regis Romão" data-gif="gifs/regis.gif">
+        Regis Romão
+    </button>
+
+    <button class="integrante" data-bs-toggle="modal" data-bs-target="#librasModal"
+        data-nome="Rodrigo Sabro" data-gif="gifs/rodrigo.gif">
+        Rodrigo Sabro
+    </button>
+
+</div>
+
+
+                <!-- Modal -->
+                <div class="modal fade" id="librasModal" tabindex="-1"
+                    aria-labelledby="librasModalLabel" aria-hidden="true">
+
+                    <div class="modal-dialog modal-dialog-centered">
+
+                        <div class="modal-content libras-modal">
+
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="librasModalLabel">
+                                    Sinal em Libras
+                                </h5>
+
+                                <button type="button"
+                                    class="btn-close"
+                                    data-bs-dismiss="modal"
+                                    aria-label="Fechar">
+                                </button>
+                            </div>
+
+                            <div class="modal-body text-center">
+
+                                <h4 id="nomeIntegrante"></h4>
+
+                                <div class="gif-container">
+                                    <img id="gifLibras"
+                                        src=""
+                                        alt="Sinal em Libras"
+                                        class="gif-libras">
+                                </div>
+
+                            </div>
 
                         </div>
+
+                    </div>
+                </div>
 
                         <div class="stack-info">
 
@@ -678,6 +752,6 @@
     <footer>© 2026 INSEP Acessível</footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/script.js"></script>
-    <script src="js/documentacao.js"></script>
+    <script src="js/sobre.js"></script>
 </body>
 </html>
