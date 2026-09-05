@@ -9,6 +9,7 @@
     <link
     href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
     rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="css/cadastro.css">
     <link rel="stylesheet" href="../css/style.css">
@@ -25,7 +26,7 @@
                 </div>
 
                 <nav class="d-flex flex-wrap gap-3">
-                    <a href="#" class="menu-link ativo">Home</a>
+                    <a href="../index.html" class="menu-link">Home</a>
                     <a href="../sobre/index.html" class="menu-link">Sobre</a>
                     <a href="../tutoriais/index.html" class="menu-link">Tutoriais</a>
                 </nav>
@@ -50,40 +51,43 @@
             <form id="registerForm">
               <!-- Nome -->
               <div class="input-group">
-                <i class="fa fa-user"></i>
-                <input type="text" id="nome" name="nome" placeholder="Digite seu nome" required>
+                  <i class="bx bx-user"></i>
+                  <input type="text" id="nome" name="nome"
+                        placeholder="Digite seu nome" required>
               </div>
-        
+
               <!-- Sobrenome -->
               <div class="input-group">
-                <i class="fa fa-user"></i>
-                <input type="text" id="sobrenome" name="sobrenome" placeholder="Digite seu sobrenome" required>
+                  <i class="bx bx-user"></i>
+                  <input type="text" id="sobrenome" name="sobrenome"
+                        placeholder="Digite seu sobrenome" required>
               </div>
-        
+
               <!-- Sexo -->
               <div class="input-group">
-                <i class="fa fa-venus-mars"></i>
-                <select id="sexo" name="sexo" required>
-                  <option value="">Selecione o sexo</option>
-                  <option value="masculino">Masculino</option>
-                  <option value="feminino">Feminino</option>
-                  <option value="prefiro não responder">Prefiro não responder</option>
-                </select>
+                  <i class="bx bx-male-female"></i>
+                  <select id="sexo" name="sexo" required>
+                      <option value="">Selecione o sexo</option>
+                      <option value="masculino">Masculino</option>
+                      <option value="feminino">Feminino</option>
+                      <option value="prefiro não responder">Prefiro não responder</option>
+                  </select>
               </div>
-        
+
               <!-- Telefone -->
               <div class="input-group">
-                <i class="fa fa-phone"></i>
-                <input type="tel" id="telefone" name="telefone"
+                  <i class="bx bx-phone"></i>
+                  <input type="tel" id="telefone" name="telefone"
                         placeholder="Digite seu telefone com DDD"
                         required
                         pattern="\d{2}\s?{4,5}-?\d{4}">
               </div>
-        
+
               <!-- Email -->
               <div class="input-group">
-                <i class="fa fa-envelope"></i>
-                <input type="email" id="email" name="email" placeholder="Digite seu e-mail" required>
+                  <i class="bx bx-envelope"></i>
+                  <input type="email" id="email" name="email"
+                        placeholder="Digite seu e-mail" required>
               </div>
         
               <!-- Confirmar Email -->
@@ -101,117 +105,58 @@
         </div>
       
         <!-- Botão de informação -->
-        <button
-          type="button"
-          class="info-video"
-          data-bs-toggle="modal"
-          data-bs-target="#videoEmailModal"
-          aria-label="Ver vídeo explicando como confirmar o e-mail"
-          title="Ver vídeo explicativo"
-        >
-          <i class="fa fa-info"></i>
+        <button type="button" class="info-video" data-bs-toggle="modal" data-bs-target="#videoEmailModal" aria-label="Ver vídeo explicando como confirmar o e-mail" title="Ver vídeo explicativo" >
+          <i class="bx bx-info-circle"></i>
         </button>
       </div>
       
       <!-- Modal - Vídeo Confirmar E-mail -->
-      <div
-        class="modal fade"
-        id="videoEmailModal"
-        tabindex="-1"
-        aria-labelledby="videoEmailModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="videoEmailModal" tabindex="-1" aria-labelledby="videoEmailModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
-      
             <div class="modal-header">
-              <h2 class="modal-title" id="videoEmailModalLabel">
-                Como confirmar seu e-mail
-              </h2>
-      
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Fechar"
-              ></button>
+              <h2 class="modal-title" id="videoEmailModalLabel">Como confirmar seu e-mail</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
             </div>
-      
+
             <div class="modal-body">
               <div class="gif-container">
-                <img id="gifLibras" src="videos/confirmar-email.gif" alt="Sinal em Libras" class="gif-libras">
+                <img src="videos/confirmar-email.gif" alt="Sinal em Libras" class="gif-libras">
               </div>
             </div>
-      
           </div>
         </div>
       </div>
-            
-      
-            <!-- Senha -->
-            <div class="input-group">
-              <i class="fa fa-lock"></i>
-              <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required minlength="8">
-            </div>
-      
-            <!-- Confirmar Senha -->
-      <div class="campo-com-info">
-        <div class="input-group">
-          <i class="fa fa-lock"></i>
-      
-          <input
-            type="password"
-            id="confirmSenha"
-            name="confirmSenha"
-            placeholder="Confirme sua senha"
-            required
-            minlength="8"
-          >
-        </div>
-      
-        <!-- Botão de informação -->
-        <button
-          type="button"
-          class="info-video"
-          data-bs-toggle="modal"
-          data-bs-target="#videoSenhaModal"
-          aria-label="Ver vídeo explicando como confirmar a senha"
-          title="Ver vídeo explicativo"
-        >
-          <i class="fa fa-info"></i>
-        </button>
+
+      <!-- Senha -->
+      <div class="input-group">
+          <i class="bx bx-lock-alt"></i>
+          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required minlength="8">
       </div>
-      
+
+      <!-- Confirmar Senha -->
+      <div class="campo-com-info">
+          <div class="input-group">
+            <input type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha" required minlength="8">
+          </div>
+          <button type="button" class="info-video" data-bs-toggle="modal" data-bs-target="#videoSenhaModal" aria-label="Ver vídeo explicando como confirmar a senha" title="Ver vídeo explicativo" >
+            <i class="bx bx-info-circle"></i>
+          </button>
+      </div>
+
       <!-- Modal - Vídeo Confirmar Senha -->
-      <div
-        class="modal fade"
-        id="videoSenhaModal"
-        tabindex="-1"
-        aria-labelledby="videoSenhaModalLabel"
-        aria-hidden="true"
-      >
+      <div class="modal fade" id="videoSenhaModal" tabindex="-1" aria-labelledby="videoSenhaModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered modal-lg">
           <div class="modal-content">
-      
             <div class="modal-header">
-              <h2 class="modal-title" id="videoSenhaModalLabel">
-                Como criar e confirmar sua senha
-              </h2>
-      
-              <button
-                type="button"
-                class="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Fechar"
-              ></button>
+              <h2 class="modal-title" id="videoSenhaModalLabel">Como criar e confirmar sua senha</h2>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" ></button>
             </div>
-      
             <div class="modal-body">
               <div class="gif-container">
-                <img id="gifLibras" src="videos/confirmar-senha.gif" alt="Sinal em Libras" class="gif-libras">
+                <img src="videos/confirmar-senha.gif" alt="Sinal em Libras" class="gif-libras">
               </div>
             </div>
-      
           </div>
         </div>
       </div>
