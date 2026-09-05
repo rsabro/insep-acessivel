@@ -1,0 +1,300 @@
+/* RESET E ESTILOS BASE */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background: #f5f7fb;
+    color: #222;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* HEADER E FOOTER */
+header, footer {
+    background: #0057b8;
+    color: white;
+}
+
+.logo {
+    font-size: 25px;
+    font-weight: bold;
+}
+
+/* MODO ESCURO (DARK MODE) */
+body.dark {
+    background: #121212;
+    color: #e0e0e0;
+}
+
+body.dark .recovery-card,
+body.dark .modal-content {
+    background: #1e1e1e;
+    color: #ffffff;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+}
+
+body.dark .recovery-header h2 {
+    color: #4da3ff;
+}
+
+body.dark .recovery-header p,
+body.dark .option-desc {
+    color: #aaa;
+}
+
+body.dark .option-card {
+    border-color: #333;
+    background-color: #252525;
+}
+
+body.dark .option-card:hover {
+    border-color: #4da3ff;
+    background-color: #2c2c2c;
+}
+
+body.dark .option-title,
+body.dark .input-field label {
+    color: #fff;
+}
+
+body.dark .input-field input {
+    background-color: #2b2b2b;
+    border-color: #444;
+    color: #fff;
+}
+
+body.dark .libras-tooltip {
+    background-color: #2b2b2b;
+    color: #fff;
+}
+
+body.dark .libras-tooltip p {
+    color: #fff;
+}
+
+body.dark .libras-tooltip::after {
+    border-color: #2b2b2b transparent transparent transparent;
+}
+
+body.dark .btn-close {
+    filter: invert(1);
+}
+
+/* CONTAINER DE RECUPERAÇÃO */
+.recovery-container {
+    width: 100%;
+    max-width: 480px;
+    padding: 0 20px;
+}
+
+.recovery-card {
+    background: #ffffff;
+    padding: 35px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+}
+
+.recovery-header h2 {
+    color: #0057b8;
+    font-weight: bold;
+}
+
+.recovery-header p {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+/* LINHA COM O BOTÃO 'i' LIBRAS */
+.field-row {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.option-group {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.option-card {
+    border: 2px solid #e1e4e8;
+    border-radius: 8px;
+    padding: 12px 14px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.option-card:hover {
+    border-color: #0057b8;
+    background-color: #f8fafc;
+}
+
+.option-card input[type="radio"] {
+    margin-right: 12px;
+    accent-color: #0057b8;
+    width: 18px;
+    height: 18px;
+}
+
+.option-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.option-title {
+    font-weight: 600;
+    color: #1a1a1a;
+    font-size: 0.95rem;
+}
+
+.option-desc {
+    color: #666666;
+    font-size: 0.8rem;
+}
+
+/* CAMPOS DE INPUT */
+.input-field {
+    position: relative;
+}
+
+.input-field input {
+    padding: 12px 40px 12px 15px;
+    border-radius: 8px;
+}
+
+.input-icon {
+    position: absolute;
+    right: 14px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #777;
+    font-size: 18px;
+    pointer-events: none;
+}
+
+/* BOTÃO LIBRAS E TOOLTIP */
+.libras-help-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-info-libras {
+    width: 24px;
+    height: 24px;
+    background-color: #0057b8;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.btn-info-libras i {
+    font-size: 16px;
+}
+
+.btn-info-libras:hover,
+.btn-info-libras:focus {
+    background-color: #00418a;
+    transform: scale(1.1);
+    outline: none;
+}
+
+.libras-tooltip {
+    position: absolute;
+    bottom: 130%;
+    right: 0;
+    width: 180px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    z-index: 100;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+    pointer-events: none;
+    text-align: center;
+}
+
+.libras-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.libras-tooltip img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.libras-tooltip p {
+    margin: 0;
+    font-size: 11px;
+    color: #333;
+    font-weight: bold;
+}
+
+.libras-help-container.active .libras-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* BOTÃO SUBMIT */
+.btn-submit {
+    padding: 12px;
+    background: #0057b8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-submit:hover {
+    background: #00418a;
+}
+
+.recovery-footer a {
+    color: #0057b8;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.recovery-footer a:hover {
+    text-decoration: underline;
+}
+
+/* MODAIS */
+.modal-gif-libras {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #0057b8;
+    padding: 2px;
+}
