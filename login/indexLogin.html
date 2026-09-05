@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - INSEP Acessível</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Ícones do Boxicons -->
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <!-- CSS Customizado -->
+    <link rel="stylesheet" href="css/styleLogin.css">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+    <!-- HEADER -->
+    <header>
+        <div class="container py-3">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+                <div class="logo">
+                    <img src="images/logo.png" alt="Logo INSEP Acessível"> Acessível
+                </div>
+
+                <nav class="d-flex flex-wrap gap-3">
+                    <a href="index.html" class="text-white text-decoration-none">Home</a>
+                    <a href="#" class="text-white text-decoration-none">Sobre</a>
+                    <a href="#" class="text-white text-decoration-none">Serviços</a>
+                    <a href="#" class="text-white text-decoration-none">Contato</a>
+                </nav>
+
+                <div class="acoes d-flex align-items-center gap-2">
+                    <button id="tema" class="btn btn-light" aria-label="Alternar tema">🌙</button>
+                    <button id="voz" class="btn btn-light" aria-label="Ativar leitura por voz">🔊</button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="flex-grow-1 d-flex align-items-center justify-content-center py-5">
+        <div class="login-container">
+            <div class="login-box">
+                <h2>Login</h2>
+                <form id="form-login" novalidate>
+                    
+                    <!-- Campo E-mail + Ícone Envelope + Botão 'i' Libras -->
+                    <div class="field-row">
+                        <div class="input-field">
+                            <input type="email" placeholder="E-mail" id="email-input">
+                            <i class='bx bxs-envelope'></i>
+                        </div>
+                        <div class="libras-help-container">
+                            <button type="button" class="btn-info-libras" aria-label="Libras E-mail" aria-expanded="false">
+                                <i class='bx bx-info-circle'></i>
+                            </button>
+                            <div class="libras-tooltip">
+                                <img src="gif/e-mailgif.gif" alt="GIF Libras E-mail">
+                                <p>Sinal: E-mail</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Campo Senha + Ícone Cadeado + Botão 'i' Libras -->
+                    <div class="field-row">
+                        <div class="input-field">
+                            <input type="password" placeholder="Senha" id="password-input">
+                            <i class='bx bxs-lock-alt'></i>
+                        </div>
+                        <div class="libras-help-container">
+                            <button type="button" class="btn-info-libras" aria-label="Libras Senha" aria-expanded="false">
+                                <i class='bx bx-info-circle'></i>
+                            </button>
+                            <div class="libras-tooltip">
+                                <img src="images/libras/tutorial-senha.gif" alt="GIF Libras Senha">
+                                <p>Sinal: Senha</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Lembrar de mim & Esqueceu a senha -->
+                    <div class="remember-forget">
+                        <div class="d-flex align-items-center gap-1">
+                            <label class="mb-0 d-flex align-items-center gap-1">
+                                <input type="checkbox"> Lembrar de mim
+                            </label>
+                            <div class="libras-help-container">
+                                <button type="button" class="btn-info-libras" aria-label="Libras Lembrar de mim" aria-expanded="false">
+                                    <i class='bx bx-info-circle'></i>
+                                </button>
+                                <div class="libras-tooltip">
+                                    <img src="images/libras/tutorial-lembrar.gif" alt="GIF Libras Lembrar">
+                                    <p>Sinal: Lembrar</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-1">
+                            <a href="#">Esqueceu a senha?</a>
+                            <div class="libras-help-container">
+                                <button type="button" class="btn-info-libras" aria-label="Libras Esqueceu a senha" aria-expanded="false">
+                                    <i class='bx bx-info-circle'></i>
+                                </button>
+                                <div class="libras-tooltip">
+                                    <img src="images/libras/tutorial-esqueceu.gif" alt="GIF Libras Esqueceu Senha">
+                                    <p>Sinal: Esqueceu Senha</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botão Entrar -->
+                    <div class="field-row mb-3">
+                        <button type="submit" class="btn-login">Entrar</button>
+                        <div class="libras-help-container">
+                            <button type="button" class="btn-info-libras" aria-label="Libras Entrar" aria-expanded="false">
+                                <i class='bx bx-info-circle'></i>
+                            </button>
+                            <div class="libras-tooltip">
+                                <img src="images/libras/tutorial-entrar.gif" alt="GIF Libras Entrar">
+                                <p>Sinal: Entrar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Link Cadastre-se -->
+                    <div class="register-link d-flex align-items-center justify-content-center gap-2">
+                        <span>Não tem uma conta? <a href="#">Cadastre-se</a></span>
+                        <div class="libras-help-container">
+                            <button type="button" class="btn-info-libras" aria-label="Libras Cadastre-se" aria-expanded="false">
+                                <i class='bx bx-info-circle'></i>
+                            </button>
+                            <div class="libras-tooltip">
+                                <img src="images/libras/tutorial-cadastrar.gif" alt="GIF Libras Cadastre-se">
+                                <p>Sinal: Cadastrar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL 1: ALERTA E-MAIL EM BRANCO -->
+    <div class="modal fade" id="modalEmailBranco" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-3 border-0 rounded-4">
+                <div class="modal-header border-0 pb-0 justify-content-end">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body pt-1">
+                    <h4 class="modal-title mb-3 fw-bold text-danger">
+                        Digite seu e-mail.
+                    </h4>
+                    <div class="libras-modal-box my-3">
+                        <img src="gif/e-mailgif.gif" alt="GIF Libras E-mail" class="modal-gif-libras">
+                        <p class="mt-2 text-secondary fw-semibold small">Sinal: E-mail</p>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 justify-content-center pt-0">
+                    <button type="button" class="btn btn-primary px-4 py-2 rounded-3 fw-bold" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 2: ALERTA SENHA EM BRANCO -->
+    <div class="modal fade" id="modalSenhaBranco" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-3 border-0 rounded-4">
+                <div class="modal-header border-0 pb-0 justify-content-end">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body pt-1">
+                    <h4 class="modal-title mb-3 fw-bold text-danger">
+                        Digite sua senha.
+                    </h4>
+                    <div class="libras-modal-box my-3">
+                        <img src="images/libras/tutorial-senha.gif" alt="GIF Libras Senha" class="modal-gif-libras">
+                        <p class="mt-2 text-secondary fw-semibold small">Sinal: Senha</p>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 justify-content-center pt-0">
+                    <button type="button" class="btn btn-primary px-4 py-2 rounded-3 fw-bold" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MODAL 3: E-MAIL NÃO EXISTE (IGUAL A IMAGEM) -->
+    <div class="modal fade" id="modalEmailInvalido" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-3 border-0 rounded-4">
+                <div class="modal-header border-0 pb-0 justify-content-end">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body pt-1">
+                    <h4 class="modal-title mb-3 fw-bold text-danger">
+                        Alerta: e-mail não existe.
+                    </h4>
+                    <div class="libras-modal-box my-3">
+                        <img src="images/libras/tutorial-esqueceu.gif" alt="GIF Libras: E-mail não encontrado" class="modal-gif-libras">
+                        <p class="mt-2 text-secondary fw-semibold small">Sinal: E-mail não existe / não encontrado</p>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 justify-content-center pt-0">
+                    <button type="button" class="btn btn-primary px-4 py-2 rounded-3 fw-bold" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        © 2026 INSEP Acessível
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scriptLogin.js"></script>
+</body>
+</html>
