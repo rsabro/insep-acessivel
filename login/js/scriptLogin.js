@@ -40,7 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
             try {
                 // Busca o arquivo usuarios.json
-                const resposta = await fetch('usuarios.json');
+                const resposta = await fetch('../dados/usuarios.json');
 
                 if (!resposta.ok) {
                     throw new Error('Erro ao carregar usuarios.json');
@@ -67,11 +67,8 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
 
-                // // 5. Login correto
-                // alert(`Login efetuado com sucesso! Bem-vindo, ${usuario.nome}!`);
-
                 // // Salva o nome do usuário para usar na próxima página
-                sessionStorage.setItem('usuarioLogado', usuario.nome);
+                sessionStorage.setItem('usuarioLogado', JSON.stringify(usuario));
 
                 // Redireciona para a página principal
                 window.location.href = '../particular/index.html';

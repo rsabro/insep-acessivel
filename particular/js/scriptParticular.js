@@ -4,19 +4,85 @@ document.addEventListener('DOMContentLoaded', () => {
     // USUÁRIO LOGADO
     // ============================================================
 
-    const nomeUsuario = document.getElementById('nome-usuario');
+    const nomeUsuario =
+        document.getElementById('nomeUsuario');
 
-    const usuarioLogado = sessionStorage.getItem('usuarioLogado');
+    const imagemUsuario =
+        document.getElementById('imagemUsuario');
 
-    // Se não estiver logado, volta para o login
-    if (!usuarioLogado) {
-        window.location.href = '../login/index.html';
+
+    // Recupera usuário da sessão
+    const usuarioSalvo =
+        sessionStorage.getItem('usuarioLogado');
+
+
+    // ============================================================
+    // PROTEÇÃO DA ÁREA PARTICULAR
+    // ============================================================
+
+    if (!usuarioSalvo) {
+
+        window.location.href =
+            '../login/indexLogin.html';
+
         return;
     }
 
-    // Mostra o nome do usuário
-    if (nomeUsuario) {
-        nomeUsuario.textContent = usuarioLogado;
+
+    // ============================================================
+    // CONVERTE JSON PARA OBJETO
+    // ============================================================
+
+    let usuario;
+
+
+    try {
+
+        usuario = JSON.parse(usuarioSalvo);
+
+    } catch (erro) {
+
+        console.error(
+            'Erro ao recuperar usuário:',
+            erro
+        );
+
+
+        // Limpa sessão inválida
+        sessionStorage.removeItem(
+            'usuarioLogado'
+        );
+
+
+        window.location.href =
+            '../login/indexLogin.html';
+
+        return;
+    }
+
+
+    // ============================================================
+    // MOSTRAR NOME
+    // ============================================================
+
+    if (nomeUsuario && usuario.nome) {
+
+        nomeUsuario.textContent =
+            usuario.nome;
+    }
+
+
+    // ============================================================
+    // MOSTRAR IMAGEM
+    // ============================================================
+
+    if (imagemUsuario && usuario.imagem) {
+
+        imagemUsuario.src =
+            usuario.imagem;
+
+        imagemUsuario.alt =
+            `Imagem de ${usuario.nome}`;
     }
 
 
@@ -24,57 +90,106 @@ document.addEventListener('DOMContentLoaded', () => {
     // BOTÃO SAIR
     // ============================================================
 
-    const btnSair = document.getElementById('sair');
-    const confirmarSair = document.getElementById('confirmarSair');
+    const btnSair =
+        document.getElementById('sair');
+
+    const confirmarSair =
+        document.getElementById('confirmarSair');
+
 
     if (btnSair) {
+
         btnSair.addEventListener('click', () => {
 
-            const modal = new bootstrap.Modal(
-                document.getElementById('modalSair')
-            );
+            const elementoModal =
+                document.getElementById('modalSair');
 
-            modal.show();
+
+            if (elementoModal) {
+
+                const modal =
+                    bootstrap.Modal.getOrCreateInstance(
+                        elementoModal
+                    );
+
+                modal.show();
+            }
 
         });
     }
+
+
+    // ============================================================
+    // CONFIRMAR SAÍDA
+    // ============================================================
 
     if (confirmarSair) {
-        confirmarSair.addEventListener('click', () => {
 
-            // Remove o usuário da sessão
-            sessionStorage.removeItem('usuarioLogado');
+        confirmarSair.addEventListener(
+            'click',
+            () => {
 
-            // Volta para o login
-            window.location.href = '../login/index.html';
+                // Remove dados da sessão
+                sessionStorage.removeItem(
+                    'usuarioLogado'
+                );
 
-        });
+
+                // Para leitura por voz
+                window.speechSynthesis.cancel();
+
+
+                // Volta para login
+                window.location.href =
+                    '../login/indexLogin.html';
+
+            }
+        );
     }
 
 
     // ============================================================
-    // BOTÃO PERFIL
+    // PERFIL
     // ============================================================
 
-    const btnPerfil = document.getElementById('btnPerfil');
+    const btnPerfil =
+        document.getElementById('btnPerfil');
+
 
     if (btnPerfil) {
+
         btnPerfil.addEventListener('click', () => {
-            alert('Área de perfil em desenvolvimento.');
+
+            alert(
+                'Área de perfil em desenvolvimento.'
+            );
+
         });
+
     }
 
 
     // ============================================================
-    // BOTÃO CONFIGURAÇÕES
+    // CONFIGURAÇÕES
     // ============================================================
 
-    const btnConfiguracoes = document.getElementById('btnConfiguracoes');
+    const btnConfiguracoes =
+        document.getElementById('btnConfiguracoes');
+
 
     if (btnConfiguracoes) {
-        btnConfiguracoes.addEventListener('click', () => {
-            alert('Área de configurações em desenvolvimento.');
-        });
+
+        btnConfiguracoes.addEventListener(
+            'click',
+            () => {
+
+                alert(
+                    'Área de configurações em desenvolvimento.'
+                );
+
+            }
+        );
+
     }
 
 
@@ -82,44 +197,69 @@ document.addEventListener('DOMContentLoaded', () => {
     // LEITURA POR VOZ
     // ============================================================
 
-    const btnVoz = document.getElementById('voz');
+    const btnVoz =
+        document.getElementById('voz');
+
 
     if (btnVoz) {
+
         btnVoz.addEventListener('click', () => {
 
             window.speechSynthesis.cancel();
 
-            const texto =
-                `Área Particular do INSEP Acessível. Olá, ${usuarioLogado}! Você está na sua área particular.`;
 
-            const utterance = new SpeechSynthesisUtterance(texto);
+            const texto =
+                `Área Particular do INSEP Acessível. ` +
+                `Olá, ${usuario.nome}! ` +
+                `Você está na sua área particular.`;
+
+
+            const utterance =
+                new SpeechSynthesisUtterance(texto);
+
 
             utterance.lang = 'pt-BR';
 
-            window.speechSynthesis.speak(utterance);
+
+            window.speechSynthesis.speak(
+                utterance
+            );
 
         });
+
     }
 
 
     // ============================================================
-    // ALTERNÂNCIA DE TEMA
+    // TEMA
     // ============================================================
 
-    const btnTema = document.getElementById('tema');
+    const btnTema =
+        document.getElementById('tema');
+
 
     if (btnTema) {
+
         btnTema.addEventListener('click', () => {
 
-            document.body.classList.toggle('dark');
+            document.body.classList.toggle(
+                'dark'
+            );
+
 
             const modoEscuroAtivo =
-                document.body.classList.contains('dark');
+                document.body.classList.contains(
+                    'dark'
+                );
+
 
             btnTema.textContent =
-                modoEscuroAtivo ? '☀️' : '🌙';
+                modoEscuroAtivo
+                    ? '☀️'
+                    : '🌙';
 
         });
+
     }
 
 });
