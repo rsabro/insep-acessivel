@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Área Particular | INSEP Acessível</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/styleParticular.css">
+</head>
+
+<body>
+
+    <!-- CABEÇALHO -->
+    <header>
+        <div class="container py-3">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Logo INSEP Acessível">
+                    Acessível
+                </div>
+
+                <nav class="d-flex flex-wrap gap-3">
+                    <a href="../index.html" class="menu-link">Home</a>
+                    <a href="../sobre/index.html" class="menu-link">Sobre</a>
+                    <a href="../tutoriais/index.html" class="menu-link">Tutoriais</a>
+                </nav>
+
+                <div class="acoes d-flex align-items-center gap-2">
+
+                    <button id="tema" class="btn btn-light" aria-label="Alternar tema">
+                        🌙
+                    </button>
+
+                    <button id="voz" class="btn btn-light" aria-label="Ativar leitura por voz">
+                        🔊
+                    </button>
+
+                    <button id="sair" class="btn btn-outline-danger">
+                        <i class='bx bx-log-out'></i>
+                        Sair
+                    </button>
+
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="container py-5">
+
+        <section class="particular-container">
+
+            <div class="particular-header">
+
+                <div>
+                    <span class="badge-area">
+                        <i class='bx bx-user'></i>
+                        Área Particular
+                    </span>
+
+                    <h1>Olá, <span id="nome-usuario">Usuário</span>!</h1>
+
+                    <p>
+                        Bem-vindo à sua área particular do INSEP Acessível.
+                    </p>
+                </div>
+
+                <div class="icone-particular">
+                    <i class='bx bx-user-circle'></i>
+                </div>
+
+            </div>
+
+
+            <!-- CARDS -->
+            <div class="cards-particular">
+
+                <article class="card-particular">
+                    <div class="card-icon">
+                        <i class='bx bx-user'></i>
+                    </div>
+
+                    <h2>Meu perfil</h2>
+
+                    <p>
+                        Consulte e gerencie suas informações pessoais.
+                    </p>
+
+                    <button class="btn-card" id="btnPerfil">
+                        Acessar perfil
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </article>
+
+
+                <article class="card-particular">
+                    <div class="card-icon">
+                        <i class='bx bx-book-open'></i>
+                    </div>
+
+                    <h2>Meus tutoriais</h2>
+
+                    <p>
+                        Acesse conteúdos e materiais de aprendizagem.
+                    </p>
+
+                    <a href="../tutoriais/index.html" class="btn-card">
+                        Ver tutoriais
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </a>
+                </article>
+
+
+                <article class="card-particular">
+                    <div class="card-icon">
+                        <i class='bx bx-cog'></i>
+                    </div>
+
+                    <h2>Configurações</h2>
+
+                    <p>
+                        Personalize sua experiência de acessibilidade.
+                    </p>
+
+                    <button class="btn-card" id="btnConfiguracoes">
+                        Configurações
+                        <i class='bx bx-right-arrow-alt'></i>
+                    </button>
+                </article>
+
+            </div>
+
+
+            <!-- INFORMAÇÃO -->
+            <div class="info-particular">
+
+                <i class='bx bx-info-circle'></i>
+
+                <div>
+                    <h2>Sobre sua área particular</h2>
+
+                    <p>
+                        Este espaço foi criado para facilitar o acesso
+                        aos seus recursos e informações dentro do
+                        INSEP Acessível.
+                    </p>
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- MODAL SAIR -->
+    <div class="modal fade" id="modalSair" tabindex="-1" aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content text-center p-3 border-0 rounded-4">
+
+                <div class="modal-header border-0 pb-0 justify-content-end">
+
+                    <button type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                    </button>
+
+                </div>
+
+                <div class="modal-body">
+
+                    <i class='bx bx-log-out modal-icone-sair'></i>
+
+                    <h2 class="modal-title mb-3">
+                        Sair da conta?
+                    </h2>
+
+                    <p>
+                        Você será direcionado para a página de login.
+                    </p>
+
+                </div>
+
+                <div class="modal-footer border-0 justify-content-center">
+
+                    <button type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal">
+                        Cancelar
+                    </button>
+
+                    <button type="button"
+                        class="btn btn-danger"
+                        id="confirmarSair">
+                        Sair
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- RODAPÉ -->
+    <footer>
+        © 2026 INSEP Acessível
+    </footer>
+
+
+    <!-- SCRIPTS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script src="js/scriptParticular.js"></script>
+    <script src="../js/script.js"></script>
+
+</body>
+</html>

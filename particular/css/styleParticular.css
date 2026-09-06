@@ -1,0 +1,262 @@
+/* ========================================
+   ÁREA PARTICULAR
+======================================== */
+
+.particular-container {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* ========================================
+   CABEÇALHO DA ÁREA
+======================================== */
+
+.particular-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+
+    padding: 35px;
+    margin-bottom: 30px;
+
+    background: var(--cor-fundo-card, #ffffff);
+    border-radius: 20px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+}
+
+.particular-header h1 {
+    margin: 15px 0 10px;
+
+    font-size: 2rem;
+    font-weight: 700;
+
+    color: var(--cor-texto, #212529);
+}
+
+.particular-header p {
+    margin: 0;
+
+    color: var(--cor-texto-secundario, #6c757d);
+}
+
+.badge-area {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+
+    padding: 8px 14px;
+
+    background: #e8f1ff;
+    color: #0d6efd;
+
+    border-radius: 20px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+.icone-particular {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 90px;
+    height: 90px;
+
+    background: #e8f1ff;
+    color: #0d6efd;
+
+    border-radius: 50%;
+
+    font-size: 3.5rem;
+}
+
+
+/* ========================================
+   CARDS
+======================================== */
+
+.cards-particular {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 25px;
+
+    margin-bottom: 30px;
+}
+
+.card-particular {
+    display: flex;
+    flex-direction: column;
+
+    padding: 30px;
+
+    background: var(--cor-fundo-card, #ffffff);
+    border-radius: 18px;
+
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card-particular:hover {
+    transform: translateY(-4px);
+
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+}
+
+.card-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    width: 55px;
+    height: 55px;
+
+    margin-bottom: 20px;
+
+    background: #e8f1ff;
+    color: #0d6efd;
+
+    border-radius: 14px;
+
+    font-size: 1.8rem;
+}
+
+.card-particular h2 {
+    margin-bottom: 12px;
+
+    font-size: 1.3rem;
+    font-weight: 700;
+
+    color: var(--cor-texto, #212529);
+}
+
+.card-particular p {
+    flex: 1;
+
+    margin-bottom: 25px;
+
+    color: var(--cor-texto-secundario, #6c757d);
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   BOTÕES DOS CARDS
+======================================== */
+
+.btn-card {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+
+    width: 100%;
+
+    padding: 12px 18px;
+
+    background: #0d6efd;
+    color: #ffffff;
+
+    border: none;
+    border-radius: 10px;
+
+    font-weight: 600;
+    text-decoration: none;
+
+    cursor: pointer;
+
+    transition: background 0.2s ease;
+}
+
+.btn-card:hover {
+    background: #0b5ed7;
+    color: #ffffff;
+}
+
+
+/* ========================================
+   INFORMAÇÃO
+======================================== */
+
+.info-particular {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+
+    padding: 25px;
+
+    background: #e8f1ff;
+    border-left: 5px solid #0d6efd;
+
+    border-radius: 12px;
+}
+
+.info-particular > i {
+    font-size: 1.8rem;
+    color: #0d6efd;
+}
+
+.info-particular h2 {
+    margin-bottom: 8px;
+
+    font-size: 1.1rem;
+    font-weight: 700;
+
+    color: #212529;
+}
+
+.info-particular p {
+    margin: 0;
+
+    color: #495057;
+    line-height: 1.6;
+}
+
+
+/* ========================================
+   MODAL SAIR
+======================================== */
+
+.modal-icone-sair {
+    font-size: 3rem;
+    color: #dc3545;
+
+    margin-bottom: 15px;
+}
+
+
+/* ========================================
+   RESPONSIVIDADE
+======================================== */
+
+@media (max-width: 768px) {
+
+    .particular-header {
+        flex-direction: column;
+        align-items: flex-start;
+
+        padding: 25px;
+    }
+
+    .icone-particular {
+        width: 70px;
+        height: 70px;
+
+        font-size: 2.5rem;
+    }
+
+    .cards-particular {
+        grid-template-columns: 1fr;
+    }
+
+    .particular-header h1 {
+        font-size: 1.6rem;
+    }
+
+}

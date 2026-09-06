@@ -67,14 +67,14 @@ document.addEventListener('DOMContentLoaded', () => {
                     return;
                 }
 
-                // 5. Login correto
-                alert(`Login efetuado com sucesso! Bem-vindo, ${usuario.nome}!`);
+                // // 5. Login correto
+                // alert(`Login efetuado com sucesso! Bem-vindo, ${usuario.nome}!`);
 
-                // Salva o nome do usuário para usar na próxima página
+                // // Salva o nome do usuário para usar na próxima página
                 sessionStorage.setItem('usuarioLogado', usuario.nome);
 
                 // Redireciona para a página principal
-                window.location.href = '../index.html';
+                window.location.href = '../particular/index.html';
 
             } catch (erro) {
                 console.error('Erro no login:', erro);
