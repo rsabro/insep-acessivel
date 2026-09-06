@@ -1,34 +1,58 @@
 {
   "usuarios": [
     {
-      "nome": "Rodrigo",
+      "nome": "Régis Romão",
+      "email": "romao.regis@gmail.com",
+      "senha": "Insep123456",
+      "imagem": "../sobre/gifs/regis.gif"
+    },
+    {
+      "nome": "Rodrigo Sabro Estevam Saruta",
       "email": "rsabro@gmail.com",
       "senha": "Insep123456",
       "imagem": "../sobre/gifs/rodrigo.gif"
     },
     {
-      "nome": "Patrícia",
+      "nome": "Patricia de Luca Felix Bezerra",
       "email": "purpl255@gmail.com",
-      "senha": "123456",
+      "senha": "Insep123456",
       "imagem": "../sobre/gifs/patricia.gif"
     },
     {
-      "nome": "Daniel",
+      "nome": "Daniel dos Santos Dias",
       "email": "danieldosadi@gmail.com",
       "senha": "Insep123456",
       "imagem": "../sobre/gifs/daniel.gif"
     },
     {
-      "nome": "Caroline",
+      "nome": "Caroline da Silva Costa",
       "email": "caahx3@gmail.com",
       "senha": "Insep123456",
       "imagem": "../sobre/gifs/caroline.gif"
     },
     {
-      "nome": "Regis",
-      "email": "romao.regis@gmail.com",
+      "nome": "Felipe Pavan dos Santos",
+      "email": "fpavan46@gmail.com",
       "senha": "Insep123456",
-      "imagem": "../sobre/gifs/regis.gif"
+      "imagem": "../sobre/gifs/felipe.gif"
+    },
+    {
+      "nome": "Marcos Rodrigo de Campos Marcondes",
+      "email": "mark.gospel23@gmail.com",
+      "senha": "Insep123456",
+      "imagem": "../sobre/gifs/marcos.gif"
+    },
+    {
+      "nome": "Jessica Cunha de Souza",
+      "email": "jehmorena2010@gmail.com",
+      "senha": "Insep123456",
+      "imagem": "../sobre/gifs/jessica.gif"
+    },
+    {
+      "nome": "Luiza Quinato",
+      "email": "luizaquinatomaltez@gmail.com",
+      "senha": "Insep123456",
+      "imagem": "../sobre/gifs/luiza.gif"
     }
   ]
 }
