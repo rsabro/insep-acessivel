@@ -23,6 +23,12 @@
       "email": "caahx3@gmail.com",
       "senha": "Insep123456",
       "imagem": "../sobre/gifs/caroline.gif"
+    },
+    {
+      "nome": "Regis",
+      "email": "romao.regis@gmail.com",
+      "senha": "Insep123456",
+      "imagem": "../sobre/gifs/regis.gif"
     }
   ]
 }
