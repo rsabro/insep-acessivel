@@ -1,8 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
 
-    // E-mail fictício para testes
-    const EMAIL_CADASTRADO = "usuario@teste.com";
-
     // ============================================================
     //  VALIDAÇÃO DO FORMULÁRIO COM MODAIS DE ALERTA
     // ============================================================
@@ -10,38 +7,79 @@ document.addEventListener('DOMContentLoaded', () => {
     const emailInput = document.getElementById('email-input');
     const passwordInput = document.getElementById('password-input');
 
+    // Função para abrir os modais de alerta
+    function abrirModal(idModal) {
+        const elemento = document.getElementById(idModal);
+
+        if (elemento) {
+            const modal = new bootstrap.Modal(elemento);
+            modal.show();
+        }
+    }
+
     if (formLogin) {
-        formLogin.addEventListener('submit', (e) => {
+        formLogin.addEventListener('submit', async (e) => {
             e.preventDefault();
 
-            const emailValor = emailInput.value.trim();
+            const emailValor = emailInput.value.trim().toLowerCase();
             const senhaValor = passwordInput.value.trim();
 
             // 1. Valida e-mail em branco
             if (emailValor === '') {
-                const modal = new bootstrap.Modal(document.getElementById('modalEmailBranco'));
-                modal.show();
+                abrirModal('modalEmailBranco');
                 emailInput.focus();
                 return;
             }
 
             // 2. Valida senha em branco
             if (senhaValor === '') {
-                const modal = new bootstrap.Modal(document.getElementById('modalSenhaBranco'));
-                modal.show();
+                abrirModal('modalSenhaBranco');
                 passwordInput.focus();
                 return;
             }
 
-            // 3. Valida se o e-mail existe
-            if (emailValor !== EMAIL_CADASTRADO) {
-                const modal = new bootstrap.Modal(document.getElementById('modalEmailInvalido'));
-                modal.show();
-                return;
-            }
+            try {
+                // Busca o arquivo usuarios.json
+                const resposta = await fetch('usuarios.json');
 
-            // Sucesso
-            alert("Login efetuado com sucesso!");
+                if (!resposta.ok) {
+                    throw new Error('Erro ao carregar usuarios.json');
+                }
+
+                const dados = await resposta.json();
+
+                // Procura o usuário pelo e-mail
+                const usuario = dados.usuarios.find(
+                    usuario => usuario.email.toLowerCase() === emailValor
+                );
+
+                // 3. E-mail não cadastrado
+                if (!usuario) {
+                    abrirModal('modalEmailInvalido');
+                    emailInput.focus();
+                    return;
+                }
+
+                // 4. Senha incorreta
+                if (usuario.senha !== senhaValor) {
+                    alert('Senha incorreta.');
+                    passwordInput.focus();
+                    return;
+                }
+
+                // 5. Login correto
+                alert(`Login efetuado com sucesso! Bem-vindo, ${usuario.nome}!`);
+
+                // Salva o nome do usuário para usar na próxima página
+                sessionStorage.setItem('usuarioLogado', usuario.nome);
+
+                // Redireciona para a página principal
+                window.location.href = '../index.html';
+
+            } catch (erro) {
+                console.error('Erro no login:', erro);
+                alert('Não foi possível realizar o login. Tente novamente.');
+            }
         });
     }
 
