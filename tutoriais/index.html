@@ -1,230 +1,415 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Acessível</title>
 
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
-    <link rel="stylesheet" href="css/tutorial.css">
-    <link rel="stylesheet" href="../css/style.css">
-</head>
+    <link rel="stylesheet" href="css/tutorial.css" />
+    <link rel="stylesheet" href="../css/style.css" />
+  </head>
 
-    <body>
-
+  <body>
     <header>
-        <div class="container py-3">
-            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
-                <div class="logo">
-                    <img src="../images/logo.png" alt="Logo INSEP Acessível"> Acessível
-                </div>
-
-                <nav class="d-flex flex-wrap gap-3">
-                    <a href="../index.html" class="menu-link">Home</a>
-                    <a href="../sobre/index.html" class="menu-link">Sobre</a>
-                    <a href="#" class="menu-link ativo">Tutoriais</a>
-                </nav>
-
-                <div class="acoes d-flex align-items-center gap-2">
-                    <a class="btn btn-light" href="../login/indexLogin.html">
-                        Login
-                    </a>
-
-                    <button id="tema" class="btn btn-light" aria-label="Alternar tema">
-                        🌙
-                    </button>
-
-                    <button id="voz" class="btn btn-light" aria-label="Ativar leitura por voz">
-                        🔊
-                    </button>
-                </div>
-
-            </div>
+      <div class="container py-3">
+        <div class="d-flex flex-wrap justify-content-between align-items-center gap-3" >
+          <div class="logo">
+            <img src="../images/logo.png" alt="Logo INSEP Acessível" />
+            Acessível
+          </div>
+          <nav class="d-flex flex-wrap gap-3">
+            <a href="../index.html" class="menu-link">Home</a>
+            <a href="../sobre/index.html" class="menu-link">Sobre</a>
+            <a href="#" class="menu-link ativo">Tutoriais</a>
+          </nav>
+          <div class="acoes d-flex align-items-center gap-2">
+            <a class="btn btn-light" href="../login/indexLogin.html"> Login </a>
+            <button id="tema" class="btn btn-light" aria-label="Alternar tema">
+              🌙
+            </button>
+            <button
+              id="voz"
+              class="btn btn-light"
+              aria-label="Ativar leitura por voz"
+            >
+              🔊
+            </button>
+          </div>
         </div>
+      </div>
     </header>
 
-    <section class="banner text-white py-5">
-        <div class="container">
+    <main class="tutorial-container">
+      <aside class="tutorial-menu">
+        <h2>📚 Tutoriais</h2>
+        <nav aria-label="Menu de tutoriais">
+            <button class="tutorial-link ativo" data-tutorial="git">
+                <i class='bx bxl-git'></i>
+                Instalação do Git
+            </button>
+            <button class="tutorial-link" data-tutorial="github">
+                <i class='bx bxl-github'></i>
+                GitHub
+            </button>
+            <button class="tutorial-link" data-tutorial="vscode">
+                <i class='bx bx-code-alt'></i>
+                Visual Studio Code
+            </button>
+            <button class="tutorial-link" data-tutorial="java">
+                <i class='bx bxl-java'></i>
+                Java
+            </button>
+            <button class="tutorial-link" data-tutorial="spring">
+                <i class='bx bx-server'></i>
+                Spring Boot
+            </button>
+            <button class="tutorial-link" data-tutorial="sql">
+                <i class='bx bx-data'></i>
+                Banco de Dados
+            </button>
+        </nav>
+      </aside>
+      <section class="tutorial-content">
+        <!-- Instalar o Git -->
+        <article id="git" class="tutorial-card aberto">
 
-            <div class="row align-items-center">
+          <h1>💻 Instalação do Git</h1>
 
-                <!-- Texto -->
-                <div class="col-md-7">
+          <div class="row align-items-center">
 
-                    <h1 class="fw-bold mb-3">
-                        Instalação do Git
-                    </h1>
+              <div class="col-md-7">
 
-                    <p class="lead">
-                        Antes de começar a trabalhar com o projeto, 
-                        você precisa instalar o Git no seu computador.
-                    </p>
+                  <p class="lead">
+                      Antes de começar a trabalhar com o projeto,
+                      você precisa instalar o Git no seu computador.
+                  </p>
 
-                    <h3 class="mt-4">
-                        💻 Passo 1 — Baixe o Git
-                    </h3>
+                  <h3 class="mt-4">
+                      💻 Passo 1 — Baixe o Git
+                  </h3>
 
-                    <p>
-                        Acesse o site oficial do Git e baixe a versão
-                        adequada para o seu computador.
-                    </p>
+                  <p>
+                      Acesse o site oficial do Git e baixe a versão
+                      adequada para o seu computador.
+                  </p>
 
-                    <a 
-                        href="https://git-scm.com/install/windows"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        class="btn btn-light fw-bold"
-                    >
-                        Baixar Git para Windows
-                    </a>
+                  <a
+                      href="https://git-scm.com/install/windows"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      class="btn btn-light fw-bold"
+                  >
+                      Baixar Git para Windows
+                  </a>
 
+              </div>
+
+              <div class="col-md-5 text-center mt-4 mt-md-0">
+
+                  <img
+                      src="images/image.png"
+                      alt="Tutorial mostrando a instalação do Git"
+                      class="img-fluid tutorial-img"
+                      data-bs-toggle="modal"
+                      data-bs-target="#imagemGitModal"
+                  >
+
+                  <p class="small mt-2">
+                      👆 Clique na imagem para ampliar
+                  </p>
+
+              </div>
+
+          </div>
+
+
+          <!-- VÍDEO DO YOUTUBE -->
+          <div class="youtube-tutorial">
+
+              <h3>🎥 Vídeo: Como instalar o Git</h3>
+
+              <div class="youtube-video">
+
+                  <div class="youtube-video">
+                    <iframe
+                        src="https://www.youtube.com/embed/H0uDVofL9-8"
+                        title="Tutorial de instalação do Git"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                        allowfullscreen>
+                    </iframe>
                 </div>
 
-                <!-- Imagem -->
-                <div class="col-md-5 text-center mt-4 mt-md-0">
+              </div>
 
-                    <img
-                        src="images/image.png"
-                        alt="Tutorial mostrando a instalação do Git"
-                        class="img-fluid tutorial-img"
-                        data-bs-toggle="modal"
-                        data-bs-target="#imagemGitModal"
-                    >
+              <p class="youtube-legenda">
+                  ▶️ Clique no vídeo para assistir. Para assistir em tela cheia,
+                  clique no botão ⛶ do YouTube.
+              </p>
 
-                    <p class="small mt-2">
-                        👆 Clique na imagem para ampliar
-                    </p>
+          </div>
 
-                </div>
 
+          <!-- TUTORIAL -->
+          <div class="mt-5">
+
+              <h2 class="fw-bold mb-4">
+                  📚 Tutorial: Como instalar o Git
+              </h2>
+
+              <div class="tutorial-step mb-4">
+
+                  <h4>1️⃣ Baixe o Git</h4>
+
+                  <p>
+                      Acesse o site oficial e clique na opção de download
+                      para Windows.
+                  </p>
+
+              </div>
+
+
+              <div class="tutorial-step mb-4">
+
+                  <h4>2️⃣ Abra o instalador</h4>
+
+                  <p>
+                      Depois que o download terminar, abra o arquivo
+                      baixado para iniciar a instalação.
+                  </p>
+
+              </div>
+
+
+              <div class="tutorial-step mb-4">
+
+                  <h4>3️⃣ Siga a instalação</h4>
+
+                  <p>
+                      Durante a instalação, você pode manter as opções
+                      recomendadas pelo instalador e avançar até concluir.
+                  </p>
+
+              </div>
+
+
+              <div class="tutorial-step mb-4">
+
+                  <h4>4️⃣ Verifique se o Git foi instalado</h4>
+
+                  <p>
+                      Abra o <strong>Git Bash</strong> ou o
+                      <strong>Prompt de Comando</strong> e digite:
+                  </p>
+
+                  <pre><code>git --version</code></pre>
+
+                  <p>
+                      Se aparecer a versão do Git, a instalação foi concluída
+                      corretamente.
+                  </p>
+
+              </div>
+
+
+              <div class="tutorial-step">
+
+                  <h4>5️⃣ Configure seu nome e e-mail</h4>
+
+                  <p>
+                      Agora configure seu nome e o e-mail que você utiliza
+                      no Git.
+                  </p>
+
+                  <pre><code>git config --global user.name "Seu Nome"
+      git config --global user.email "seu@email.com"</code></pre>
+
+                  <p>
+                      Essas informações serão utilizadas nos seus commits.
+                  </p>
+
+              </div>
+
+          </div>
+
+      </article>
+        <!-- Github -->
+        <article id="github" class="tutorial-card">
+
+          <h1>🐙 GitHub</h1>
+          <div class="row align-items-center">
+            <div class="col-md-7">
+              <h2>🚀 Git & GitHub</h2>
+              <p>
+                  Git e GitHub são conhecimentos essenciais para quem trabalha
+                  com tecnologia.
+              </p>
+              <p>
+                  No desenvolvimento de projetos, saber utilizar Git vai muito
+                  além de conhecer alguns comandos. É importante entender
+                  versionamento, colaboração, organização do código e controle
+                  das mudanças.
+              </p>
             </div>
-
-            <!-- Tutorial -->
-            <div class="mt-5">
-
-                <h2 class="fw-bold mb-4">
-                    📚 Tutorial: Como instalar o Git
-                </h2>
-
-                <div class="tutorial-step mb-4">
-                    <h4>1️⃣ Baixe o Git</h4>
-
-                    <p>
-                        Acesse o site oficial e clique na opção de download
-                        para Windows.
-                    </p>
-                </div>
-
-                <div class="tutorial-step mb-4">
-                    <h4>2️⃣ Abra o instalador</h4>
-
-                    <p>
-                        Depois que o download terminar, abra o arquivo
-                        baixado para iniciar a instalação.
-                    </p>
-                </div>
-
-                <div class="tutorial-step mb-4">
-                    <h4>3️⃣ Siga a instalação</h4>
-
-                    <p>
-                        Durante a instalação, você pode manter as opções
-                        recomendadas pelo instalador e avançar até concluir.
-                    </p>
-                </div>
-
-                <div class="tutorial-step mb-4">
-                    <h4>4️⃣ Verifique se o Git foi instalado</h4>
-
-                    <p>
-                        Abra o <strong>Git Bash</strong> ou o
-                        <strong>Prompt de Comando</strong> e digite:
-                    </p>
-
-                    <pre><code>git --version</code></pre>
-
-                    <p>
-                        Se aparecer a versão do Git, a instalação foi concluída
-                        corretamente.
-                    </p>
-                </div>
-
-                <div class="tutorial-step">
-                    <h4>5️⃣ Configure seu nome e e-mail</h4>
-
-                    <p>
-                        Agora configure seu nome e o e-mail que você utiliza
-                        no Git.
-                    </p>
-
-                    <pre><code>git config --global user.name "Seu Nome"
-    git config --global user.email "seu@email.com"</code></pre>
-
-                    <p>
-                        Essas informações serão utilizadas nos seus commits.
-                    </p>
-                </div>
-
+            <div class="col-md-5 text-center mt-4 mt-md-0">
+                <img
+                    src="images/github.jpeg"
+                    alt="Tutorial GitHub"
+                    class="img-fluid tutorial-img"
+                    data-bs-toggle="modal"
+                    data-bs-target="#imagemGitHubModal"
+                >
+                <p class="small mt-2">
+                    👆 Clique na imagem para ampliar
+                </p>
             </div>
+          </div>
+          <h3>📌 Alguns comandos que fazem parte da rotina:</h3>
 
-        </div>
-    </section>
+          <div class="comandos-git">
 
+              <div class="comando">
+                  <code>git add</code>
+                  <span>Prepara as alterações para o commit.</span>
+              </div>
 
-    <!-- Modal da imagem -->
-    <div 
-        class="modal fade"
-        id="imagemGitModal"
-        tabindex="-1"
-        aria-labelledby="imagemGitModalLabel"
-        aria-hidden="true"
+              <div class="comando">
+                  <code>git commit</code>
+                  <span>Registra as alterações realizadas no projeto.</span>
+              </div>
+
+              <div class="comando">
+                  <code>git push</code>
+                  <span>Envia as alterações para o repositório remoto.</span>
+              </div>
+
+              <div class="comando">
+                  <code>git pull</code>
+                  <span>Atualiza o projeto local com as alterações do repositório remoto.</span>
+              </div>
+
+              <div class="comando">
+                  <code>git clone</code>
+                  <span>Copia um repositório para o computador.</span>
+              </div>
+              <div class="comando">
+                  <code>git branch</code>
+                  <span>Permite trabalhar com diferentes branches do projeto.</span>
+              </div>
+              <p></p>
+          </div>
+          <h3>🎯 Por que aprender Git e GitHub?</h3>
+          <p>
+            Aprender Git e GitHub é essencial para quem trabalha com Desenvolvimento e Tecnologia da Informação, principalmente em projetos realizados em equipe.
+          </p>
+          <p>
+            Durante o desenvolvimento do INSEP Acessível, utilizamos essas ferramentas para organizar o código, criar e acompanhar branches, colaborar com a equipe, revisar alterações e manter o projeto versionado e organizado.
+          </p>
+          <p>
+            Mais do que aprender uma ferramenta, o objetivo é desenvolver boas práticas de trabalho em equipe, organização e colaboração, preparando-nos para situações reais do mercado de tecnologia.
+          </p>
+          <div class="mensagem-final">
+              🚀 <strong>Aprender. Praticar. Colaborar. Versionar. Evoluir.</strong>
+          </div>
+        </article>
+        <article id="vscode" class="tutorial-card">
+            <h1>💻 Visual Studio Code</h1>
+            <p>Conteúdo do tutorial do VS Code...</p>
+        </article>
+        <article id="java" class="tutorial-card">
+            <h1>☕ Java</h1>
+            <p>Conteúdo do tutorial de Java...</p>
+        </article>
+        <article id="spring" class="tutorial-card">
+            <h1>🌱 Spring Boot</h1>
+            <p>Conteúdo do tutorial de Spring Boot...</p>
+        </article>
+        <article id="sql" class="tutorial-card">
+            <h1>🗄️ Banco de Dados</h1>
+            <p>Conteúdo do tutorial de SQL...</p>
+        </article>
+      </section>
+    </main>
+
+    <!-- Instalar do GIT -->
+    <div
+      class="modal fade"
+      id="imagemGitModal"
+      tabindex="-1"
+      aria-labelledby="imagemGitModalLabel"
+      aria-hidden="true"
     >
-        <div class="modal-dialog modal-xl modal-dialog-centered">
-
-            <div class="modal-content">
-
-                <div class="modal-header">
-                    <h5 class="modal-title" id="imagemGitModalLabel">
-                        Tutorial de instalação do Git
-                    </h5>
-
-                    <button 
-                        type="button"
-                        class="btn-close"
-                        data-bs-dismiss="modal"
-                        aria-label="Fechar"
-                    ></button>
-                </div>
-
-                <div class="modal-body text-center">
-
-                    <img
-                        src="images/image.png"
-                        alt="Imagem ampliada do tutorial de instalação do Git"
-                        class="img-fluid"
-                    >
-
-                </div>
-
-            </div>
-
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="imagemGitModalLabel">
+              Tutorial de instalação do Git
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img
+              src="images/image.png"
+              alt="Imagem ampliada do tutorial de instalação do Git"
+              class="img-fluid"
+            />
+          </div>
         </div>
+      </div>
+      
     </div>
 
-    <footer>
-        © 2026 INSEP Acessível
-    </footer>
+    <!-- GITHUB -->
+    <div
+      class="modal fade"
+      id="imagemGitHubModal"
+      tabindex="-1"
+      aria-labelledby="imagemGitHubModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-xl modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="imagemGitHubModalLabel">
+              Tutorial GitHub
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Fechar"
+            ></button>
+          </div>
+          <div class="modal-body text-center">
+            <img
+              src="images/github.jpeg"
+              alt="Imagem ampliada do tutorial de instalação do Git"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+      
+    </div>
 
-    <script
-        src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
-    </script>
 
+    <footer>© 2026 INSEP Acessível</footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
     <script src="../js/script.js"></script>
-
-    </body>
+    <script src="js/scriptTutoriais.js"></script>
+  </body>
 </html>
