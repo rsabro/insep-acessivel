@@ -46,51 +46,82 @@
     </header>
  
     <main>
-          <div class="cadastro-container">
-            <h2>Criar Conta</h2>
-            <form id="registerForm">
-              <!-- Nome -->
-              <div class="input-group">
-                  <i class="bx bx-user"></i>
-                  <input type="text" id="nome" name="nome"
-                        placeholder="Digite seu nome" required>
+      <div class="cadastro-container">
+        <h2>Criar Conta</h2>
+        <form id="registerForm">
+          <div class="campo-com-info">
+            <div class="input-group">
+              <i class="bx bx-user"></i>
+              <input type="text" id="nome" name="nome"
+                    placeholder="Digite seu nome" required>
+            </div>
+            <div class="campo-com-info">
+              <div class="libras-help-container">
+                <button type="button" class="btn-info-libras" aria-label="Seu nome" aria-expanded="false">
+                    <i class='bx bx-info-circle'></i>
+                </button>
+                <div class="libras-tooltip">
+                  <img src="videos/seunome.gif" alt="GIF Libras Seu nome">
+                  <p>Sinal: Seu nome</p>
+                </div>
               </div>
+            </div>
+          </div>
+          <div class="campo-com-info">
+            <div class="input-group">
+                <i class="bx bx-user"></i>
+                <input type="text" id="sobrenome" name="sobrenome"
+                      placeholder="Digite seu sobrenome" required>
+            </div>
+            <div class="libras-help-container">
+              <button type="button" class="btn-info-libras" aria-label="Seu sobrenome" aria-expanded="false">
+                  <i class='bx bx-info-circle'></i>
+              </button>
+              <div class="libras-tooltip">
+                <img src="videos/seusobrenome.gif" alt="GIF Libras Seu sobrenome">
+                <p>Sinal: Seu sobrenome</p>
+              </div>
+            </div>
+          </div>
+          <!-- Sexo -->
+          <div class="input-group">
+            <i class="bx bx-male-female"></i>
+            <select id="sexo" name="sexo" required>
+                <option value="">Selecione o sexo</option>
+                <option value="masculino">Masculino</option>
+                <option value="feminino">Feminino</option>
+                <option value="prefiro não responder">Prefiro não responder</option>
+            </select>
+          </div>
 
-              <!-- Sobrenome -->
-              <div class="input-group">
-                  <i class="bx bx-user"></i>
-                  <input type="text" id="sobrenome" name="sobrenome"
-                        placeholder="Digite seu sobrenome" required>
+          <!-- Telefone -->
+          <div class="campo-com-info">
+            <div class="input-group">
+              <i class="bx bx-phone"></i>
+              <input type="tel" id="telefone" name="telefone"
+                    placeholder="Digite seu telefone com DDD"
+                    required
+                    pattern="\d{2}\s?{4,5}-?\d{4}">
+            </div>
+            <div class="libras-help-container">
+              <button type="button" class="btn-info-libras" aria-label="Seu telefone" aria-expanded="false">
+                  <i class='bx bx-info-circle'></i>
+              </button>
+              <div class="libras-tooltip">
+                <img src="videos/seutelefone.gif" alt="GIF Libras Seu telefone">
+                <p>Sinal: Seu telefone</p>
               </div>
+            </div>
+          </div>
 
-              <!-- Sexo -->
-              <div class="input-group">
-                  <i class="bx bx-male-female"></i>
-                  <select id="sexo" name="sexo" required>
-                      <option value="">Selecione o sexo</option>
-                      <option value="masculino">Masculino</option>
-                      <option value="feminino">Feminino</option>
-                      <option value="prefiro não responder">Prefiro não responder</option>
-                  </select>
-              </div>
-
-              <!-- Telefone -->
-              <div class="input-group">
-                  <i class="bx bx-phone"></i>
-                  <input type="tel" id="telefone" name="telefone"
-                        placeholder="Digite seu telefone com DDD"
-                        required
-                        pattern="\d{2}\s?{4,5}-?\d{4}">
-              </div>
-
-              <!-- Email -->
-              <div class="input-group">
-                  <i class="bx bx-envelope"></i>
-                  <input type="email" id="email" name="email"
-                        placeholder="Digite seu e-mail" required>
-              </div>
-        
-              <!-- Confirmar Email -->
+          <!-- Email -->
+          <div class="input-group">
+            <i class="bx bx-envelope"></i>
+            <input type="email" id="email" name="email"
+                  placeholder="Digite seu e-mail" required>
+          </div>
+    
+          <!-- Confirmar Email -->
         <div class="campo-com-info">
         <div class="input-group">
           <i class="fa fa-envelope"></i>
@@ -105,26 +136,14 @@
         </div>
       
         <!-- Botão de informação -->
-        <button type="button" class="info-video" data-bs-toggle="modal" data-bs-target="#videoEmailModal" aria-label="Ver vídeo explicando como confirmar o e-mail" title="Ver vídeo explicativo" >
-          <i class="bx bx-info-circle"></i>
-        </button>
-      </div>
-      
-      <!-- Modal - Vídeo Confirmar E-mail -->
-      <div class="modal fade" id="videoEmailModal" tabindex="-1" aria-labelledby="videoEmailModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="videoEmailModalLabel">Como confirmar seu e-mail</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        <div class="libras-help-container">
+            <button type="button" class="btn-info-libras" aria-label="Confirme seu e-mail" aria-expanded="false">
+                <i class='bx bx-info-circle'></i>
+            </button>
+            <div class="libras-tooltip">
+                <img src="videos/confirmar-email.gif" alt="GIF Libras Confirme seu e-mail">
+                <p>Sinal: Confirme seu e-mail</p>
             </div>
-
-            <div class="modal-body">
-              <div class="gif-container">
-                <img src="videos/confirmar-email.gif" alt="Sinal em Libras" class="gif-libras">
-              </div>
-            </div>
-          </div>
         </div>
       </div>
 
@@ -139,56 +158,47 @@
           <div class="input-group">
             <input type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha" required minlength="8">
           </div>
-          <button type="button" class="info-video" data-bs-toggle="modal" data-bs-target="#videoSenhaModal" aria-label="Ver vídeo explicando como confirmar a senha" title="Ver vídeo explicativo" >
-            <i class="bx bx-info-circle"></i>
-          </button>
-      </div>
-
-      <!-- Modal - Vídeo Confirmar Senha -->
-      <div class="modal fade" id="videoSenhaModal" tabindex="-1" aria-labelledby="videoSenhaModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered modal-lg">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h2 class="modal-title" id="videoSenhaModalLabel">Como criar e confirmar sua senha</h2>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar" ></button>
-            </div>
-            <div class="modal-body">
-              <div class="gif-container">
-                <img src="videos/confirmar-senha.gif" alt="Sinal em Libras" class="gif-libras">
+          <div class="campo-com-info">
+            <div class="libras-help-container">
+              <button type="button" class="btn-info-libras" aria-label="Confirme sua senha" aria-expanded="false">
+                  <i class='bx bx-info-circle'></i>
+              </button>
+              <div class="libras-tooltip">
+                  <img src="videos/igualsenha.gif" alt="GIF Libras Confirme sua senha">
+                  <p>Sinal: Confirme sua senha</p>
               </div>
-            </div>
           </div>
         </div>
       </div>
+      
       <button type="submit">Cadastrar</button>
     </form>
     <p id="registerMessage" role="alert"></p>
     <p class="login-link">Já tem conta? <a href="../login/indexLogin.html">Entrar</a></p>
   </div>
   </main>
-  <script>
-    document.getElementById("registerForm").addEventListener("submit", function(e) {
-      e.preventDefault();
-      const email = document.getElementById("email").value;
-      const confirmEmail = document.getElementById("confirmEmail").value;
-      const senha = document.getElementById("senha").value;
-      const confirmSenha = document.getElementById("confirmSenha").value;
- 
-      // Regex para senha forte
-      const regexSenha = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
- 
-      if(email !== confirmEmail) {
-        document.getElementById("registerMessage").innerText = "Os e-mails não conferem!";
-      } else if(senha !== confirmSenha) {
-        document.getElementById("registerMessage").innerText = "As senhas não conferem!";
-      } else if(!regexSenha.test(senha)) {
-        document.getElementById("registerMessage").innerText =
-          "A senha deve ter no mínimo 8 caracteres, incluindo letra maiúscula, minúscula, número e símbolo.";
-      } else {
-        document.getElementById("registerMessage").innerText = "Conta criada com sucesso!";
-      }
-    });
-  </script>
+
+  <div class="modal fade" id="modalSenhaOito" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content text-center p-3 border-0 rounded-4">
+        <div class="modal-header border-0 pb-0 justify-content-end">
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+        </div>
+        <div class="modal-body pt-1">
+          <h4 class="modal-title mb-3 fw-bold text-danger">
+            A senha deve ter no mínimo 8 caracteres, incluindo letra maiúscula, minúscula, número e símbolo.
+          </h4>
+          <div class="libras-modal-box my-3">
+            <img src="videos/confirmar-senha.gif" alt="GIF Libras E-mail" class="modal-gif-libras">
+          </div>
+        </div>
+        <div class="modal-footer border-0 justify-content-center pt-0">
+            <button type="button" class="btn btn-primary px-4 py-2 rounded-3 fw-bold" data-bs-dismiss="modal">Entendido</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <footer>
         © 2026 INSEP Acessível
     </footer>
@@ -197,6 +207,7 @@
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
  
-    <script src="../js/script.js"></script>
+  <script src="js/cadastro.js"></script>
+  <script src="../js/script.js"></script>
 </body>
 </html>

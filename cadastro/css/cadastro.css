@@ -9,10 +9,10 @@
 ========================= */
 
 .cadastro-container {
-    background: #fff;
+    background: rgba(255, 255, 255, 0.70);
     padding: 30px;
     border-radius: 10px;
-    width: 340px;
+    width: 540px;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
     text-align: center;
     margin: 0 auto;
@@ -41,6 +41,7 @@
     border-radius: 6px;
     padding: 10px;
     background: #f9f9f9;
+    width: 94%;
 }
 
 .input-group i {
@@ -215,4 +216,172 @@
         height: 36px;
         min-width: 36px;
     }
+}
+
+/* BOTÃO PEQUENO "i" EM AZUL E TOOLTIP DE LIBRAS */
+.libras-help-container {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+
+.btn-info-libras {
+    width: 22px;
+    height: 22px;
+    background-color: #0057b8;
+    color: #ffffff;
+    border: none;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    padding: 0;
+    transition: transform 0.2s, background-color 0.2s;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.btn-info-libras i {
+    font-size: 15px;
+    line-height: 1;
+}
+
+.btn-info-libras:hover,
+.btn-info-libras:focus {
+    background-color: #00418a;
+    transform: scale(1.1);
+    outline: none;
+}
+
+/* BALÃO COM O GIF DE LIBRAS */
+.libras-tooltip {
+    position: absolute;
+    bottom: 130%;
+    right: 0;
+    width: 180px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 100;
+    
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(8px);
+    transition: opacity 0.25s, transform 0.25s, visibility 0.25s;
+    pointer-events: none;
+    text-align: center;
+}
+
+.libras-tooltip::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    right: 6px;
+    border-width: 6px;
+    border-style: solid;
+    border-color: #ffffff transparent transparent transparent;
+}
+
+.libras-tooltip img {
+    width: 100%;
+    height: auto;
+    border-radius: 4px;
+    margin-bottom: 4px;
+}
+
+.libras-tooltip p {
+    margin: 0;
+    font-size: 11px;
+    color: #333;
+    font-weight: bold;
+}
+
+.libras-help-container.active .libras-tooltip {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* ESTILOS DOS MODAIS DE ALERTA */
+.modal-content {
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+.modal-title.text-danger {
+    color: #ff2b2b !important;
+    font-size: 1.35rem;
+}
+
+.modal-gif-libras {
+    max-width: 200px;
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 2px solid #0057b8;
+    padding: 2px;
+}
+
+.modal-footer .btn-primary {
+    background-color: #0d6efd;
+    border: none;
+    min-width: 120px;
+}
+
+.modal-footer .btn-primary:hover {
+    background-color: #0b5ed7;
+}
+
+/* LEMBRAR E ESQUECEU A SENHA */
+.remember-forget {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 14px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.remember-forget a {
+    color: #0057b8;
+    text-decoration: none;
+}
+
+.remember-forget a:hover {
+    text-decoration: underline;
+}
+
+/* BOTÃO ENTRAR */
+.btn-login {
+    width: 100%;
+    padding: 12px;
+    background: #0057b8;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.btn-login:hover {
+    background: #00418a;
+}
+
+/* LINK DE CADASTRO */
+.register-link {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #555;
+}
+
+.register-link a {
+    color: #0057b8;
+    text-decoration: none;
+    font-weight: 600;
 }
