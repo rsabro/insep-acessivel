@@ -84,6 +84,7 @@
             </div>
           </div>
           <!-- Sexo -->
+          <div class="campo-com-info">
           <div class="input-group">
             <i class="bx bx-male-female"></i>
             <select id="sexo" name="sexo" required>
@@ -92,6 +93,16 @@
                 <option value="feminino">Feminino</option>
                 <option value="prefiro não responder">Prefiro não responder</option>
             </select>
+          </div>
+          <div class="libras-help-container">
+              <button type="button" class="btn-info-libras" aria-label="Selecione o sexo" aria-expanded="false">
+                  <i class='bx bx-info-circle'></i>
+              </button>
+              <div class="libras-tooltip">
+                <img src="videos/selecionesexo.gif" alt="GIF Libras Seu telefone">
+                <p>Sinal: Selecione o sexo</p>
+              </div>
+            </div>
           </div>
 
           <!-- Telefone -->
@@ -115,10 +126,21 @@
           </div>
 
           <!-- Email -->
+           <div class="campo-com-info">
           <div class="input-group">
             <i class="bx bx-envelope"></i>
             <input type="email" id="email" name="email"
                   placeholder="Digite seu e-mail" required>
+          </div>
+          <div class="libras-help-container">
+              <button type="button" class="btn-info-libras" aria-label="Seu email" aria-expanded="false">
+                  <i class='bx bx-info-circle'></i>
+              </button>
+              <div class="libras-tooltip">
+          <img src="videos/seuemail.gif" alt="GIF Libras Seu sobrenome">
+                <p>Sinal: Seu email</p>
+              </div>
+            </div>
           </div>
     
           <!-- Confirmar Email -->
@@ -148,9 +170,22 @@
       </div>
 
       <!-- Senha -->
+      <div class="campo-com-info">
       <div class="input-group">
           <i class="bx bx-lock-alt"></i>
           <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required minlength="8">
+      </div>
+      <div class="campo-com-info">
+            <div class="libras-help-container">
+              <button type="button" class="btn-info-libras" aria-label="Sua senha" aria-expanded="false">
+                  <i class='bx bx-info-circle'></i>
+              </button>
+              <div class="libras-tooltip">
+                  <img src="videos/suasenha.gif" alt="GIF Libras Confirme sua senha">
+                  <p>Sinal: Sua senha</p>
+              </div>
+          </div>
+        </div>
       </div>
 
       <!-- Confirmar Senha -->
