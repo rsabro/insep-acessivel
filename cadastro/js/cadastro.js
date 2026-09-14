@@ -348,7 +348,7 @@ document.addEventListener('DOMContentLoaded', () => {
             abrirModalValidacao(
                 "Campo obrigatório",
                 "Confirme sua senha.",
-                "videos/confirmar-senha.gif",
+                "videos/igualsenha.gif",
                 confirmSenha
             );
 
@@ -368,7 +368,7 @@ document.addEventListener('DOMContentLoaded', () => {
             abrirModalValidacao(
                 "Senhas diferentes",
                 "As senhas não conferem!",
-                "videos/confirmar-senha.gif",
+                "videos/igualsenha.gif",
                 confirmSenha
             );
 
@@ -391,7 +391,7 @@ document.addEventListener('DOMContentLoaded', () => {
             abrirModalValidacao(
                 "Senha inválida",
                 "A senha deve ter no mínimo 8 caracteres, incluindo letra maiúscula, minúscula, número e símbolo.",
-                "videos/senha.gif",
+                "videos/confirmar-senha.gif",
                 senha
             );
 
