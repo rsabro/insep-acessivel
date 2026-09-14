@@ -1,248 +1,811 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
+
     <meta charset="UTF-8">
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Acessível</title>
 
     <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    rel="stylesheet">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+        href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+        rel="stylesheet">
+
+    <link
+        href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+        rel="stylesheet">
 
     <link rel="stylesheet" href="css/cadastro.css">
+
     <link rel="stylesheet" href="../css/style.css">
+
 </head>
 
-    <body>
+
+<body>
+
+
+    <!-- ============================================================
+         HEADER
+    ============================================================ -->
 
     <header>
+
         <div class="container py-3">
+
             <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
 
                 <div class="logo">
-                    <img src="../images/logo.png" alt="Logo INSEP Acessível"> Acessível
+
+                    <img
+                        src="../images/logo.png"
+                        alt="Logo INSEP Acessível">
+
+                    Acessível
+
                 </div>
 
+
                 <nav class="d-flex flex-wrap gap-3">
-                    <a href="../index.html" class="menu-link">Home</a>
-                    <a href="../sobre/index.html" class="menu-link">Sobre</a>
-                    <a href="../tutoriais/index.html" class="menu-link">Tutoriais</a>
+
+                    <a
+                        href="../index.html"
+                        class="menu-link">
+                        Home
+                    </a>
+
+                    <a
+                        href="../sobre/index.html"
+                        class="menu-link">
+                        Sobre
+                    </a>
+
+                    <a
+                        href="../tutoriais/index.html"
+                        class="menu-link">
+                        Tutoriais
+                    </a>
+
                 </nav>
 
+
                 <div class="acoes d-flex align-items-center gap-2">
-                    <button id="tema" class="btn btn-light" aria-label="Alternar tema">
+
+                    <button
+                        id="tema"
+                        class="btn btn-light"
+                        aria-label="Alternar tema">
                         🌙
                     </button>
 
-                    <button id="voz" class="btn btn-light" aria-label="Ativar leitura por voz">
+                    <button
+                        id="voz"
+                        class="btn btn-light"
+                        aria-label="Ativar leitura por voz">
                         🔊
                     </button>
+
                 </div>
 
             </div>
+
         </div>
+
     </header>
- 
+
+
+
+    <!-- ============================================================
+         CADASTRO
+    ============================================================ -->
+
     <main>
-      <div class="cadastro-container">
-        <h2>Criar Conta</h2>
-        <form id="registerForm">
-          <div class="campo-com-info">
-            <div class="input-group">
-              <i class="bx bx-user"></i>
-              <input type="text" id="nome" name="nome"
-                    placeholder="Digite seu nome" required>
-            </div>
-            <div class="campo-com-info">
-              <div class="libras-help-container">
-                <button type="button" class="btn-info-libras" aria-label="Seu nome" aria-expanded="false">
-                    <i class='bx bx-info-circle'></i>
-                </button>
-                <div class="libras-tooltip">
-                  <img src="videos/seunome.gif" alt="GIF Libras Seu nome">
-                  <p>Sinal: Seu nome</p>
+
+        <div class="cadastro-container">
+
+            <h2>Criar Conta</h2>
+
+
+            <form
+                id="registerForm"
+                novalidate>
+
+
+                <!-- ==================================================
+                     NOME
+                ================================================== -->
+
+                <div class="campo-com-info">
+
+                    <div class="input-group">
+
+                        <i class="bx bx-user"></i>
+
+                        <input
+                            type="text"
+                            id="nome"
+                            name="nome"
+                            placeholder="Digite seu nome"
+                            required
+                            autocomplete="given-name">
+
+                    </div>
+
+
+                    <div class="libras-help-container">
+
+                        <button
+                            type="button"
+                            class="btn-info-libras"
+                            aria-label="Seu nome"
+                            aria-expanded="false">
+
+                            <i class="bx bx-info-circle"></i>
+
+                        </button>
+
+
+                        <div class="libras-tooltip">
+
+                            <img
+                                src="videos/nome.gif"
+                                alt="GIF Libras: seu nome">
+
+                            <p>Sinal: Seu nome</p>
+
+                        </div>
+
+                    </div>
+
                 </div>
-              </div>
-            </div>
-          </div>
-          <div class="campo-com-info">
-            <div class="input-group">
-                <i class="bx bx-user"></i>
-                <input type="text" id="sobrenome" name="sobrenome"
-                      placeholder="Digite seu sobrenome" required>
-            </div>
-            <div class="libras-help-container">
-              <button type="button" class="btn-info-libras" aria-label="Seu sobrenome" aria-expanded="false">
-                  <i class='bx bx-info-circle'></i>
-              </button>
-              <div class="libras-tooltip">
-                <img src="videos/seusobrenome.gif" alt="GIF Libras Seu sobrenome">
-                <p>Sinal: Seu sobrenome</p>
-              </div>
-            </div>
-          </div>
-          <!-- Sexo -->
-          <div class="campo-com-info">
-          <div class="input-group">
-            <i class="bx bx-male-female"></i>
-            <select id="sexo" name="sexo" required>
-                <option value="">Selecione o sexo</option>
-                <option value="masculino">Masculino</option>
-                <option value="feminino">Feminino</option>
-                <option value="prefiro não responder">Prefiro não responder</option>
-            </select>
-          </div>
-          <div class="libras-help-container">
-              <button type="button" class="btn-info-libras" aria-label="Selecione o sexo" aria-expanded="false">
-                  <i class='bx bx-info-circle'></i>
-              </button>
-              <div class="libras-tooltip">
-                <img src="videos/selecionesexo.gif" alt="GIF Libras Seu telefone">
-                <p>Sinal: Selecione o sexo</p>
-              </div>
-            </div>
-          </div>
 
-          <!-- Telefone -->
-          <div class="campo-com-info">
-            <div class="input-group">
-              <i class="bx bx-phone"></i>
-              <input type="tel" id="telefone" name="telefone"
-                    placeholder="Digite seu telefone com DDD"
-                    required
-                    pattern="\d{2}\s?{4,5}-?\d{4}">
-            </div>
-            <div class="libras-help-container">
-              <button type="button" class="btn-info-libras" aria-label="Seu telefone" aria-expanded="false">
-                  <i class='bx bx-info-circle'></i>
-              </button>
-              <div class="libras-tooltip">
-                <img src="videos/seutelefone.gif" alt="GIF Libras Seu telefone">
-                <p>Sinal: Seu telefone</p>
-              </div>
-            </div>
-          </div>
 
-          <!-- Email -->
-           <div class="campo-com-info">
-          <div class="input-group">
-            <i class="bx bx-envelope"></i>
-            <input type="email" id="email" name="email"
-                  placeholder="Digite seu e-mail" required>
-          </div>
-          <div class="libras-help-container">
-              <button type="button" class="btn-info-libras" aria-label="Seu email" aria-expanded="false">
-                  <i class='bx bx-info-circle'></i>
-              </button>
-              <div class="libras-tooltip">
-          <img src="videos/seuemail.gif" alt="GIF Libras Seu sobrenome">
-                <p>Sinal: Seu email</p>
-              </div>
+
+                <!-- ==================================================
+                     SOBRENOME
+                ================================================== -->
+
+                <div class="campo-com-info">
+
+                    <div class="input-group">
+
+                        <i class="bx bx-user"></i>
+
+                        <input
+                            type="text"
+                            id="sobrenome"
+                            name="sobrenome"
+                            placeholder="Digite seu sobrenome"
+                            required
+                            autocomplete="family-name">
+
+                    </div>
+
+
+                    <div class="libras-help-container">
+
+                        <button
+                            type="button"
+                            class="btn-info-libras"
+                            aria-label="Seu sobrenome"
+                            aria-expanded="false">
+
+                            <i class="bx bx-info-circle"></i>
+
+                        </button>
+
+
+                        <div class="libras-tooltip">
+
+                            <img
+                                src="videos/sobrenome.gif"
+                                alt="GIF Libras: seu sobrenome">
+
+                            <p>Sinal: Seu sobrenome</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     SEXO
+                ================================================== -->
+
+                <div class="campo-com-info">
+
+                    <div class="input-group">
+
+                        <i class="bx bx-male-female"></i>
+
+                        <select
+                            id="sexo"
+                            name="sexo"
+                            required>
+
+                            <option value="">
+                                Selecione o sexo
+                            </option>
+
+                            <option value="masculino">
+                                Masculino
+                            </option>
+
+                            <option value="feminino">
+                                Feminino
+                            </option>
+
+                            <option value="prefiro não responder">
+                                Prefiro não responder
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="libras-help-container">
+
+                        <button
+                            type="button"
+                            class="btn-info-libras"
+                            aria-label="Selecione o sexo"
+                            aria-expanded="false">
+
+                            <i class="bx bx-info-circle"></i>
+
+                        </button>
+
+
+                        <div class="libras-tooltip">
+
+                            <img
+                                src="videos/sexo.gif"
+                                alt="GIF Libras: selecione o sexo">
+
+                            <p>Sinal: Selecione o sexo</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     TELEFONE
+                ================================================== -->
+
+                <div class="campo-com-info">
+
+                    <div class="input-group">
+
+                        <i class="bx bx-phone"></i>
+
+                        <input
+                            type="tel"
+                            id="telefone"
+                            name="telefone"
+                            placeholder="Digite seu telefone com DDD"
+                            required
+                            pattern="[0-9]{2}\s?[0-9]{4,5}-?[0-9]{4}"
+                            autocomplete="tel">
+
+                    </div>
+
+
+                    <div class="libras-help-container">
+
+                        <button
+                            type="button"
+                            class="btn-info-libras"
+                            aria-label="Seu telefone"
+                            aria-expanded="false">
+
+                            <i class="bx bx-info-circle"></i>
+
+                        </button>
+
+
+                        <div class="libras-tooltip">
+
+                            <img
+                                src="videos/telefone.gif"
+                                alt="GIF Libras: seu telefone">
+
+                            <p>Sinal: Seu telefone</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     E-MAIL
+                ================================================== -->
+
+                <div class="campo-com-info">
+
+                    <div class="input-group">
+
+                        <i class="bx bx-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="email"
+                            name="email"
+                            placeholder="Digite seu e-mail"
+                            required
+                            autocomplete="email">
+
+                    </div>
+
+
+                    <div class="libras-help-container">
+
+                        <button
+                            type="button"
+                            class="btn-info-libras"
+                            aria-label="Seu e-mail"
+                            aria-expanded="false">
+
+                            <i class="bx bx-info-circle"></i>
+
+                        </button>
+
+
+                        <div class="libras-tooltip">
+
+                            <img
+                                src="videos/email.gif"
+                                alt="GIF Libras: seu e-mail">
+
+                            <p>Sinal: Seu e-mail</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     CONFIRMAR E-MAIL
+                ================================================== -->
+
+                <div class="campo-com-info">
+
+                    <div class="input-group">
+
+                        <i class="bx bx-envelope"></i>
+
+                        <input
+                            type="email"
+                            id="confirmEmail"
+                            name="confirmEmail"
+                            placeholder="Confirme seu e-mail"
+                            required
+                            autocomplete="email">
+
+                    </div>
+
+
+                    <div class="libras-help-container">
+
+                        <button
+                            type="button"
+                            class="btn-info-libras"
+                            aria-label="Confirme seu e-mail"
+                            aria-expanded="false">
+
+                            <i class="bx bx-info-circle"></i>
+
+                        </button>
+
+
+                        <div class="libras-tooltip">
+
+                            <img
+                                src="videos/confirmar-email.gif"
+                                alt="GIF Libras: confirme seu e-mail">
+
+                            <p>Sinal: Confirme seu e-mail</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     SENHA
+                ================================================== -->
+
+                <div class="campo-com-info">
+
+                    <div class="input-group">
+
+                        <i class="bx bx-lock-alt"></i>
+
+                        <input
+                            type="password"
+                            id="senha"
+                            name="senha"
+                            placeholder="Digite sua senha"
+                            required
+                            minlength="8"
+                            autocomplete="new-password">
+
+                    </div>
+
+
+                    <div class="libras-help-container">
+
+                        <button
+                            type="button"
+                            class="btn-info-libras"
+                            aria-label="Sua senha"
+                            aria-expanded="false">
+
+                            <i class="bx bx-info-circle"></i>
+
+                        </button>
+
+
+                        <div class="libras-tooltip">
+
+                            <img
+                                src="videos/senha.gif"
+                                alt="GIF Libras: sua senha">
+
+                            <p>Sinal: Sua senha</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     CONFIRMAR SENHA
+                ================================================== -->
+
+                <div class="campo-com-info">
+
+                    <div class="input-group">
+
+                        <i class="bx bx-lock-alt"></i>
+
+                        <input
+                            type="password"
+                            id="confirmSenha"
+                            name="confirmSenha"
+                            placeholder="Confirme sua senha"
+                            required
+                            minlength="8"
+                            autocomplete="new-password">
+
+                    </div>
+
+
+                    <div class="libras-help-container">
+
+                        <button
+                            type="button"
+                            class="btn-info-libras"
+                            aria-label="Confirme sua senha"
+                            aria-expanded="false">
+
+                            <i class="bx bx-info-circle"></i>
+
+                        </button>
+
+
+                        <div class="libras-tooltip">
+
+                            <img
+                                src="videos/confirmar-senha.gif"
+                                alt="GIF Libras: confirme sua senha">
+
+                            <p>Sinal: Confirme sua senha</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ==================================================
+                     BOTÃO CADASTRAR
+                ================================================== -->
+
+                <button type="submit">
+                    Cadastrar
+                </button>
+
+            </form>
+
+
+
+            <!-- ======================================================
+                 MENSAGEM DE VALIDAÇÃO
+            ====================================================== -->
+
+            <p
+                id="registerMessage"
+                role="alert"
+                aria-live="assertive">
+            </p>
+
+
+            <p class="login-link">
+
+                Já tem conta?
+
+                <a href="../login/indexLogin.html">
+                    Entrar
+                </a>
+
+            </p>
+
+        </div>
+
+    </main>
+
+
+
+    <!-- ============================================================
+         MODAL - SENHA
+    ============================================================ -->
+
+    <div
+        class="modal fade"
+        id="modalSenhaOito"
+        tabindex="-1"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content text-center p-3 border-0 rounded-4">
+
+
+                <div class="modal-header border-0 pb-0 justify-content-end">
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body pt-1">
+
+                    <h4 class="modal-title mb-3 fw-bold text-danger">
+
+                        A senha deve ter no mínimo 8 caracteres,
+                        incluindo letra maiúscula, minúscula,
+                        número e símbolo.
+
+                    </h4>
+
+
+                    <div class="libras-modal-box my-3">
+
+                        <img
+                            src="videos/confirmar-senha.gif"
+                            alt="GIF Libras: confirme sua senha"
+                            class="modal-gif-libras">
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer border-0 justify-content-center pt-0">
+
+                    <button
+                        type="button"
+                        class="btn btn-primary px-4 py-2 rounded-3 fw-bold"
+                        data-bs-dismiss="modal">
+
+                        Entendido
+
+                    </button>
+
+                </div>
+
             </div>
-          </div>
-    
-          <!-- Confirmar Email -->
-        <div class="campo-com-info">
-        <div class="input-group">
-          <i class="fa fa-envelope"></i>
-      
-          <input
-            type="email"
-            id="confirmEmail"
-            name="confirmEmail"
-            placeholder="Confirme seu e-mail"
-            required
-          >
-        </div>
-      
-        <!-- Botão de informação -->
-        <div class="libras-help-container">
-            <button type="button" class="btn-info-libras" aria-label="Confirme seu e-mail" aria-expanded="false">
-                <i class='bx bx-info-circle'></i>
-            </button>
-            <div class="libras-tooltip">
-                <img src="videos/confirmar-email.gif" alt="GIF Libras Confirme seu e-mail">
-                <p>Sinal: Confirme seu e-mail</p>
-            </div>
-        </div>
-      </div>
 
-      <!-- Senha -->
-      <div class="campo-com-info">
-      <div class="input-group">
-          <i class="bx bx-lock-alt"></i>
-          <input type="password" id="senha" name="senha" placeholder="Digite sua senha" required minlength="8">
-      </div>
-      <div class="campo-com-info">
-            <div class="libras-help-container">
-              <button type="button" class="btn-info-libras" aria-label="Sua senha" aria-expanded="false">
-                  <i class='bx bx-info-circle'></i>
-              </button>
-              <div class="libras-tooltip">
-                  <img src="videos/suasenha.gif" alt="GIF Libras Confirme sua senha">
-                  <p>Sinal: Sua senha</p>
-              </div>
-          </div>
         </div>
-      </div>
 
-      <!-- Confirmar Senha -->
-      <div class="campo-com-info">
-          <div class="input-group">
-            <input type="password" id="confirmSenha" name="confirmSenha" placeholder="Confirme sua senha" required minlength="8">
-          </div>
-          <div class="campo-com-info">
-            <div class="libras-help-container">
-              <button type="button" class="btn-info-libras" aria-label="Confirme sua senha" aria-expanded="false">
-                  <i class='bx bx-info-circle'></i>
-              </button>
-              <div class="libras-tooltip">
-                  <img src="videos/igualsenha.gif" alt="GIF Libras Confirme sua senha">
-                  <p>Sinal: Confirme sua senha</p>
-              </div>
-          </div>
-        </div>
-      </div>
-      
-      <button type="submit">Cadastrar</button>
-    </form>
-    <p id="registerMessage" role="alert"></p>
-    <p class="login-link">Já tem conta? <a href="../login/indexLogin.html">Entrar</a></p>
-  </div>
-  </main>
-
-  <div class="modal fade" id="modalSenhaOito" tabindex="-1" aria-hidden="true">
-    <div class="modal-dialog modal-dialog-centered">
-      <div class="modal-content text-center p-3 border-0 rounded-4">
-        <div class="modal-header border-0 pb-0 justify-content-end">
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
-        </div>
-        <div class="modal-body pt-1">
-          <h4 class="modal-title mb-3 fw-bold text-danger">
-            A senha deve ter no mínimo 8 caracteres, incluindo letra maiúscula, minúscula, número e símbolo.
-          </h4>
-          <div class="libras-modal-box my-3">
-            <img src="videos/confirmar-senha.gif" alt="GIF Libras E-mail" class="modal-gif-libras">
-          </div>
-        </div>
-        <div class="modal-footer border-0 justify-content-center pt-0">
-            <button type="button" class="btn btn-primary px-4 py-2 rounded-3 fw-bold" data-bs-dismiss="modal">Entendido</button>
-        </div>
-      </div>
     </div>
-  </div>
 
-  <footer>
+
+
+    <!-- ============================================================
+         MODAL - PREENCHER TODOS OS CAMPOS
+    ============================================================ -->
+
+    <div
+        class="modal fade"
+        id="preenchertodos"
+        tabindex="-1"
+        aria-hidden="true">
+
+        <div class="modal-dialog modal-dialog-centered">
+
+            <div class="modal-content text-center p-3 border-0 rounded-4">
+
+
+                <div class="modal-header border-0 pb-0 justify-content-end">
+
+                    <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Fechar">
+                    </button>
+
+                </div>
+
+
+                <div class="modal-body pt-1">
+
+                    <h4 class="modal-title mb-3 fw-bold text-danger">
+
+                        Por favor, preencha todos os campos obrigatórios.
+
+                    </h4>
+
+
+                    <div class="libras-modal-box my-3">
+
+                        <img
+                            src="videos/preenchertodos.gif"
+                            alt="GIF Libras: preencha todos os campos"
+                            class="modal-gif-libras">
+
+                    </div>
+
+                </div>
+
+
+                <div class="modal-footer border-0 justify-content-center pt-0">
+
+                    <button
+                        type="button"
+                        class="btn btn-primary px-4 py-2 rounded-3 fw-bold"
+                        data-bs-dismiss="modal">
+
+                        Entendido
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ============================================================
+     MODAL DE VALIDAÇÃO
+============================================================ -->
+
+<div
+    class="modal fade"
+    id="modalValidacao"
+    tabindex="-1"
+    aria-hidden="true">
+
+    <div class="modal-dialog modal-dialog-centered">
+
+        <div class="modal-content text-center p-3 border-0 rounded-4">
+
+            <div class="modal-header border-0 pb-0 justify-content-end">
+
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Fechar">
+                </button>
+
+            </div>
+
+
+            <div class="modal-body pt-1">
+
+                <h4
+                    id="modalTitulo"
+                    class="modal-title mb-3 fw-bold text-danger">
+                </h4>
+
+
+                <p
+                    id="modalMensagem"
+                    class="mb-3">
+                </p>
+
+
+                <div class="libras-modal-box my-3">
+
+                    <img
+                        id="modalGif"
+                        src="videos/preenchertodos.gif"
+                        alt=""
+                        class="modal-gif-libras">
+
+                </div>
+
+            </div>
+
+
+            <div class="modal-footer border-0 justify-content-center pt-0">
+
+                <button
+                    type="button"
+                    class="btn btn-primary px-4 py-2 rounded-3 fw-bold"
+                    data-bs-dismiss="modal">
+
+                    Entendido
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+    <!-- ============================================================
+         FOOTER
+    ============================================================ -->
+
+    <footer>
+
         © 2026 INSEP Acessível
+
     </footer>
- 
+
+
+
+    <!-- ============================================================
+         SCRIPTS
+    ============================================================ -->
+
     <script
         src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js">
     </script>
- 
-  <script src="js/cadastro.js"></script>
-  <script src="../js/script.js"></script>
+
+    <script src="js/cadastro.js"></script>
+
+    <script src="../js/script.js"></script>
+
 </body>
+
 </html>
