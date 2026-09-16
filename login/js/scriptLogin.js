@@ -85,7 +85,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================================
     const containersLibras = document.querySelectorAll('.libras-help-container');
     const temporizadores = {};
-    const TEMPO_PARA_FECHAR = 5000; // 5 segundos
 
     containersLibras.forEach((container, index) => {
         const btn = container.querySelector('.btn-info-libras');
@@ -103,10 +102,13 @@ document.addEventListener('DOMContentLoaded', () => {
                     container.classList.add('active');
                     btn.setAttribute('aria-expanded', 'true');
 
+                    // Pega o tempo milimétrico definido no data-tempo do botão
+                    const tempoGif = parseInt(btn.getAttribute('data-tempo')) || 5000;
+
                     temporizadores[index] = setTimeout(() => {
                         container.classList.remove('active');
                         btn.setAttribute('aria-expanded', 'false');
-                    }, TEMPO_PARA_FECHAR);
+                    }, tempoGif);
                 }
             });
         }
@@ -146,7 +148,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnVoz.addEventListener('click', () => {
             window.speechSynthesis.cancel();
             const texto = "Página de Login INSEP Acessível. Digite seu e-mail e senha. Para ver a tradução em Libras de qualquer item, clique no botão de informação azul.";
-            
+
             const utterance = new SpeechSynthesisUtterance(texto);
             utterance.lang = 'pt-BR';
             window.speechSynthesis.speak(utterance);
