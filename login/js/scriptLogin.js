@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Função auxiliar simples para validação básica de formato de e-mail
+    function validarFormatoEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
     if (formLogin) {
         formLogin.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -24,17 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const emailValor = emailInput.value.trim().toLowerCase();
             const senhaValor = passwordInput.value.trim();
 
-            // 1. Valida e-mail em branco
-            if (emailValor === '') {
-                abrirModal('modalEmailBranco');
-                emailInput.focus();
+            // 1. Validação: Campo obrigatório vazio (E-mail ou Senha)
+            if (emailValor === '' || senhaValor === '') {
+                abrirModal('modalCampoVazio');
+                if (emailValor === '') {
+                    emailInput.focus();
+                } else {
+                    passwordInput.focus();
+                }
                 return;
             }
 
-            // 2. Valida senha em branco
-            if (senhaValor === '') {
-                abrirModal('modalSenhaBranco');
-                passwordInput.focus();
+            // 2. Validação: E-mail inválido (formato incorreto)
+            if (!validarFormatoEmail(emailValor)) {
+                abrirModal('modalEmailInvalido');
+                emailInput.focus();
                 return;
             }
 
@@ -50,24 +60,17 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Procura o usuário pelo e-mail
                 const usuario = dados.usuarios.find(
-                    usuario => usuario.email.toLowerCase() === emailValor
+                    u => u.email.toLowerCase() === emailValor
                 );
 
-                // 3. E-mail não cadastrado
-                if (!usuario) {
-                    abrirModal('modalEmailInvalido');
-                    emailInput.focus();
-                    return;
-                }
-
-                // 4. Senha incorreta
-                if (usuario.senha !== senhaValor) {
-                    alert('Senha incorreta.');
+                // 3. Validação: Credenciais incorretas (usuário não encontrado ou senha errada)
+                if (!usuario || usuario.senha !== senhaValor) {
+                    abrirModal('modalCredenciaisIncorretas');
                     passwordInput.focus();
                     return;
                 }
 
-                // // Salva o nome do usuário para usar na próxima página
+                // Salva o nome do usuário para usar na próxima página
                 sessionStorage.setItem('usuarioLogado', JSON.stringify(usuario));
 
                 // Redireciona para a página principal
