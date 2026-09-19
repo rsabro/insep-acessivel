@@ -30,18 +30,21 @@ document.addEventListener('DOMContentLoaded', () => {
             const emailValor = emailInput.value.trim().toLowerCase();
             const senhaValor = passwordInput.value.trim();
 
-            // 1. Validação: Campo obrigatório vazio (E-mail ou Senha)
-            if (emailValor === '' || senhaValor === '') {
-                abrirModal('modalCampoVazio');
-                if (emailValor === '') {
-                    emailInput.focus();
-                } else {
-                    passwordInput.focus();
-                }
+            // 1. Validação: E-mail em branco (Vídeo 1)
+            if (emailValor === '') {
+                abrirModal('modalCampoVazio'); // Utiliza o modal existente com o GIF do e-mail
+                emailInput.focus();
                 return;
             }
 
-            // 2. Validação: E-mail inválido (formato incorreto)
+            // 2. Validação: Senha em branco (Vídeo 2)
+            if (senhaValor === '') {
+                abrirModal('modalSenhaVazia'); // Utiliza o novo modal com o GIF da senha
+                passwordInput.focus();
+                return;
+            }
+
+            // 3. Validação: E-mail inválido (formato incorreto)
             if (!validarFormatoEmail(emailValor)) {
                 abrirModal('modalEmailInvalido');
                 emailInput.focus();
@@ -63,7 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     u => u.email.toLowerCase() === emailValor
                 );
 
-                // 3. Validação: Credenciais incorretas (usuário não encontrado ou senha errada)
+                // 4. Validação: Credenciais incorretas (usuário não encontrado ou senha errada)
                 if (!usuario || usuario.senha !== senhaValor) {
                     abrirModal('modalCredenciaisIncorretas');
                     passwordInput.focus();
@@ -105,7 +108,6 @@ document.addEventListener('DOMContentLoaded', () => {
                     container.classList.add('active');
                     btn.setAttribute('aria-expanded', 'true');
 
-                    // Pega o tempo milimétrico definido no data-tempo do botão
                     const tempoGif = parseInt(btn.getAttribute('data-tempo')) || 5000;
 
                     temporizadores[index] = setTimeout(() => {
