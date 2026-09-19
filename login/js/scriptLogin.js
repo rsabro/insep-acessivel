@@ -30,16 +30,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const emailValor = emailInput.value.trim().toLowerCase();
             const senhaValor = passwordInput.value.trim();
 
-            // 1. Validação: E-mail em branco (Vídeo 1)
+            // 1. Validação: E-mail em branco
             if (emailValor === '') {
-                abrirModal('modalCampoVazio'); // Utiliza o modal existente com o GIF do e-mail
+                abrirModal('modalCampoVazio');
                 emailInput.focus();
                 return;
             }
 
-            // 2. Validação: Senha em branco (Vídeo 2)
+            // 2. Validação: Senha em branco
             if (senhaValor === '') {
-                abrirModal('modalSenhaVazia'); // Utiliza o novo modal com o GIF da senha
+                abrirModal('modalSenhaVazia');
                 passwordInput.focus();
                 return;
             }
@@ -66,9 +66,16 @@ document.addEventListener('DOMContentLoaded', () => {
                     u => u.email.toLowerCase() === emailValor
                 );
 
-                // 4. Validação: Credenciais incorretas (usuário não encontrado ou senha errada)
-                if (!usuario || usuario.senha !== senhaValor) {
-                    abrirModal('modalCredenciaisIncorretas');
+                // 4. Validação: E-mail não encontrado no JSON
+                if (!usuario) {
+                    abrirModal('modalEmailNaoCadastrado');
+                    emailInput.focus();
+                    return;
+                }
+
+                // 5. Validação: E-mail existe, mas a senha está incorreta
+                if (usuario.senha !== senhaValor) {
+                    abrirModal('modalCredenciaisIncorretas'); // Dispara o modal atualizado apenas para senha errada
                     passwordInput.focus();
                     return;
                 }
