@@ -152,7 +152,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // SUBMIT
     // ============================================================
 
-    form.addEventListener("submit", function(e) {
+    form.addEventListener("submit", function (e) {
 
         e.preventDefault();
 
@@ -377,24 +377,66 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
         // ========================================================
-        // SENHA FORTE
+        // SENHA FORTE (Regras da Imagem)
         // ========================================================
 
-        const regexSenha =
-            /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/;
+        const valSenha = senha.value;
+        const valEmail = email.value.trim().toLowerCase();
+        const partesEmail = valEmail.split('@')[0];
 
-        if (!regexSenha.test(senha.value)) {
-
-            registerMessage.innerText =
-                "A senha deve ter no mínimo 8 caracteres, incluindo letra maiúscula, minúscula, número e símbolo.";
-
+        // 1. Tamanho entre 8 e 16 caracteres
+        if (valSenha.length < 8 || valSenha.length > 16) {
+            registerMessage.innerText = "A senha deve conter entre 8 e 16 caracteres.";
             abrirModalValidacao(
                 "Senha inválida",
-                "A senha deve ter no mínimo 8 caracteres, incluindo letra maiúscula, minúscula, número e símbolo.",
+                "A senha deve ter entre 8 e 16 caracteres.",
                 "videos/confirmar-senha.gif",
                 senha
             );
+            return;
+        }
 
+        // 2. Não utilizar o e-mail (ou o nome do e-mail) como senha
+        if (valEmail !== "" && (valSenha.toLowerCase() === valEmail || (partesEmail.length >= 3 && valSenha.toLowerCase().includes(partesEmail)))) {
+            registerMessage.innerText = "Não use seu e-mail como senha.";
+            abrirModalValidacao(
+                "Senha insegura",
+                "Não use seu e-mail como senha.",
+                "videos/confirmar-senha.gif",
+                senha
+            );
+            return;
+        }
+
+        // 3. Sequências numéricas simples (ex: 1234, 0123, 9876)
+        const sequenciasComuns = ["0123", "1234", "2345", "3456", "4567", "5678", "6789", "9876", "8765"];
+        const temSequencia = sequenciasComuns.some(seq => valSenha.includes(seq));
+        if (temSequencia) {
+            registerMessage.innerText = "Não utilize sequências numéricas do teclado.";
+            abrirModalValidacao(
+                "Senha insegura",
+                "Não utilize sequências numéricas do teclado.",
+                "videos/confirmar-senha.gif",
+                senha
+            );
+            return;
+        }
+
+        // 4. Mínimo 2 das 4 opções (maiúscula, minúscula, número, caractere especial)
+        let opcoesAtendidas = 0;
+        if (/[A-Z]/.test(valSenha)) opcoesAtendidas++;
+        if (/[a-z]/.test(valSenha)) opcoesAtendidas++;
+        if (/[0-9]/.test(valSenha)) opcoesAtendidas++;
+        if (/[@$!%*?&#^()_\-+=~`]/.test(valSenha)) opcoesAtendidas++;
+
+        if (opcoesAtendidas < 2) {
+            registerMessage.innerText = "Sua senha deve atender a pelo menos duas das opções recomendadas.";
+            abrirModalValidacao(
+                "Senha fraca",
+                "Utilize pelo menos duas das opções: letra maiúscula, minúscula, número ou caractere especial.",
+                "videos/confirmar-senha.gif",
+                senha
+            );
             return;
         }
 
@@ -409,3 +451,17 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 });
+
+// Exibir instruções de senha apenas ao focar no campo
+const campoSenha = document.getElementById('senha');
+const dicasSenha = document.getElementById('dicasSenha');
+
+if (campoSenha && dicasSenha) {
+    campoSenha.addEventListener('focus', () => {
+        dicasSenha.classList.remove('d-none');
+    });
+
+    campoSenha.addEventListener('blur', () => {
+        dicasSenha.classList.add('d-none');
+    });
+}
