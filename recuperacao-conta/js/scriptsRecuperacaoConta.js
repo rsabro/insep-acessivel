@@ -17,14 +17,14 @@ document.addEventListener('DOMContentLoaded', () => {
             userInput.placeholder = "exemplo@email.com";
             userInput.type = "email";
             inputIcon.className = "bx bxs-envelope input-icon";
-            gifInputHelp.src = "../gif/e-mailgif.gif";
+            gifInputHelp.src = "gifs/emailRegistrado.gif";
             textInputHelp.textContent = "Sinal: E-mail";
         } else {
             labelUserInput.textContent = "Celular registrado";
             userInput.placeholder = "(11) 99999-9999";
             userInput.type = "tel";
             inputIcon.className = "bx bxs-phone input-icon";
-            gifInputHelp.src = "../images/libras/tutorial-sms.gif";
+            gifInputHelp.src = "gifs/celularRegistrado.gif";
             textInputHelp.textContent = "Sinal: Celular";
         }
     }
@@ -52,11 +52,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 if (radioEmail.checked) {
                     modalTitulo.textContent = "Digite seu e-mail registrado.";
-                    modalGif.src = "../gif/e-mailgif.gif";
+                    modalGif.src = "gifs/digitaEmail.gif";
                     modalTexto.textContent = "Sinal: E-mail";
                 } else {
                     modalTitulo.textContent = "Digite seu número de celular.";
-                    modalGif.src = "../images/libras/tutorial-sms.gif";
+                    modalGif.src = "gifs/digitaCelular.gif";
                     modalTexto.textContent = "Sinal: Celular";
                 }
 
