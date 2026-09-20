@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Acessível</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/styleRecuperacaoConta.css">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+    <body>
+
+    <header>
+        <div class="container py-3">
+            <div class="d-flex flex-wrap justify-content-between align-items-center gap-3">
+
+                <div class="logo">
+                    <img src="../images/logo.png" alt="Logo INSEP Acessível"> Acessível
+                </div>
+
+                <nav class="d-flex flex-wrap gap-3">
+                    <a href="../index.html" class="menu-link">Home</a>
+                    <a href="../sobre/index.html" class="menu-link">Sobre</a>
+                    <a href="../tutoriais/index.html" class="menu-link">Tutoriais</a>
+                </nav>
+
+                <div class="acoes d-flex align-items-center gap-2">
+                    <button id="tema" class="btn btn-light" aria-label="Alternar tema">
+                        🌙
+                    </button>
+
+                    <button id="voz" class="btn btn-light" aria-label="Ativar leitura por voz">
+                        🔊
+                    </button>
+                </div>
+
+            </div>
+        </div>
+    </header>
+
+    <!-- ÁREA PRINCIPAL -->
+    <main class="flex-grow-1 d-flex align-items-center justify-content-center py-5">
+        <div class="recovery-container">
+            <div class="recovery-card">
+                
+                <div class="recovery-header text-center mb-4">
+                    <h2>Recuperar Conta</h2>
+                    
+                    <!-- Instrução + Botão Libras -->
+                    <div class="d-flex align-items-center justify-content-center gap-2 mt-2">
+                        <p class="mb-0">Escolha como deseja receber o código de verificação para redefinir seu acesso.</p>
+                        <div class="libras-help-container">
+                            <button type="button" class="btn-info-libras" aria-label="Libras Instrução de recuperação" aria-expanded="false">
+                                <i class='bx bx-info-circle'></i>
+                            </button>
+                            <div class="libras-tooltip">
+                                <img src="gifs/escolhe.gif" alt="GIF Libras Instrução">
+                                <p>Sinal: Instruções</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <form id="form-recuperar" novalidate>
+                    
+                    <!-- Opções de envio -->
+                    <div class="option-group mb-4">
+                        
+                        <!-- Opção E-mail -->
+                        <div class="field-row align-items-stretch">
+                            <label class="option-card flex-grow-1 mb-0">
+                                <input type="radio" name="method" value="email" id="radio-email" checked>
+                                <div class="option-info">
+                                    <span class="option-title">Enviar por E-mail</span>
+                                    <span class="option-desc">Receba um código no seu e-mail cadastrado</span>
+                                </div>
+                            </label>
+                            <div class="libras-help-container">
+                                <button type="button" class="btn-info-libras" aria-label="Libras Enviar por E-mail" aria-expanded="false">
+                                    <i class='bx bx-info-circle'></i>
+                                </button>
+                                <div class="libras-tooltip">
+                                    <img src="gifs/receberEmail.gif" alt="GIF Libras E-mail">
+                                    <p>Sinal: E-mail</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Opção SMS -->
+                        <div class="field-row align-items-stretch">
+                            <label class="option-card flex-grow-1 mb-0">
+                                <input type="radio" name="method" value="sms" id="radio-sms">
+                                <div class="option-info">
+                                    <span class="option-title">Enviar por SMS</span>
+                                    <span class="option-desc">Receba um código no seu celular cadastrado</span>
+                                </div>
+                            </label>
+                            <div class="libras-help-container">
+                                <button type="button" class="btn-info-libras" aria-label="Libras Enviar por SMS" aria-expanded="false">
+                                    <i class='bx bx-info-circle'></i>
+                                </button>
+                                <div class="libras-tooltip">
+                                    <img src="gifs/receberSMS.gif" alt="GIF Libras SMS">
+                                    <p>Sinal: SMS / Celular</p>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+
+                    <!-- Input E-mail / Celular -->
+                    <div class="field-row mb-4">
+                        <div class="input-field flex-grow-1">
+                            <label for="user-input" class="form-label fw-semibold" id="label-user-input">E-mail registrado</label>
+                            <div class="position-relative">
+                                <input type="text" id="user-input" placeholder="exemplo@email.com" class="form-control">
+                                <i class='bx bxs-envelope input-icon' id="input-icon"></i>
+                            </div>
+                        </div>
+                        <div class="libras-help-container align-self-end mb-1">
+                            <button type="button" class="btn-info-libras" aria-label="Libras Campo de Identificação" aria-expanded="false">
+                                <i class='bx bx-info-circle'></i>
+                            </button>
+                            <div class="libras-tooltip">
+                                <img src="gifs/emailRegistrado.gif" alt="GIF Libras Digitar Dados" id="gif-input-help">
+                                <p id="text-input-help">Sinal: E-mail</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Botão Enviar Código -->
+                    <div class="field-row mb-3">
+                        <button type="submit" class="btn-submit flex-grow-1">Enviar Código</button>
+                        <div class="libras-help-container">
+                            <button type="button" class="btn-info-libras" aria-label="Libras Enviar Código" aria-expanded="false">
+                                <i class='bx bx-info-circle'></i>
+                            </button>
+                            <div class="libras-tooltip">
+                                <img src="gifs/enviarCodigo.gif" alt="GIF Libras Enviar">
+                                <p>Sinal: Enviar</p>
+                            </div>
+                        </div>
+                    </div>
+
+                </form>
+
+                <!-- Rodapé / Voltar para o Login com Libras -->
+                <div class="recovery-footer text-center mt-3 d-flex align-items-center justify-content-center gap-2">
+                    <a href="../login/indexLogin.html">Voltar para o Login</a>
+                    <div class="libras-help-container">
+                        <button type="button" class="btn-info-libras" aria-label="Libras Voltar para o Login" aria-expanded="false">
+                            <i class='bx bx-info-circle'></i>
+                        </button>
+                        <div class="libras-tooltip">
+                            <img src="gifs/voltarLogin.gif" alt="GIF Libras Voltar Login">
+                            <p>Sinal: Voltar / Login</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- MODAL 1: ALERTA CAMPO EM BRANCO -->
+    <div class="modal fade" id="modalCampoBranco" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-center p-3 border-0 rounded-4">
+                <div class="modal-header border-0 pb-0 justify-content-end">
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Fechar"></button>
+                </div>
+                <div class="modal-body pt-1">
+                    <h4 class="modal-title mb-3 fw-bold text-danger" id="modalCampoBrancoTitulo">
+                        Digite seu e-mail ou celular.
+                    </h4>
+                    <div class="libras-modal-box my-3">
+                        <img src="../gif/e-mailgif.gif" alt="GIF Libras Alerta" class="modal-gif-libras" id="modalCampoBrancoGif">
+                        <p class="mt-2 text-secondary fw-semibold small" id="modalCampoBrancoTexto">Sinal: Preenchimento obrigatório</p>
+                    </div>
+                </div>
+                <div class="modal-footer border-0 justify-content-center pt-0">
+                    <button type="button" class="btn btn-primary px-4 py-2 rounded-3 fw-bold" data-bs-dismiss="modal">Entendido</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer>
+        <div class="container text-center py-3">
+            © 2026 INSEP Acessível
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="js/scriptsRecuperacaoConta.js"></script>
+    <script src="../js/script.js"></script>
+</body>
+</html>
