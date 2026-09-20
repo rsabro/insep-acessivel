@@ -339,6 +339,16 @@
     border: 2px solid #0057b8;
     padding: 2px;
 }
+.modal-gif-libras2 {
+  width: 120px;
+  max-width: 120px;
+  height: auto;
+  display: block;
+
+  border-radius: 8px;
+  border: 2px solid #0057b8;
+  padding: 2px;
+}
 
 .modal-footer .btn-primary {
     background-color: #0d6efd;
