@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================================
     const containersLibras = document.querySelectorAll('.libras-help-container');
     const temporizadores = {};
-    const TEMPO_PARA_FECHAR = 5000;
+    const TEMPO_PARA_FECHAR = 10000;
 
     containersLibras.forEach((container, index) => {
         const btn = container.querySelector('.btn-info-libras');

@@ -17,6 +17,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
+    // Função auxiliar simples para validação básica de formato de e-mail
+    function validarFormatoEmail(email) {
+        const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return re.test(email);
+    }
+
     if (formLogin) {
         formLogin.addEventListener('submit', async (e) => {
             e.preventDefault();
@@ -24,17 +30,24 @@ document.addEventListener('DOMContentLoaded', () => {
             const emailValor = emailInput.value.trim().toLowerCase();
             const senhaValor = passwordInput.value.trim();
 
-            // 1. Valida e-mail em branco
+            // 1. Validação: E-mail em branco
             if (emailValor === '') {
-                abrirModal('modalEmailBranco');
+                abrirModal('modalCampoVazio');
                 emailInput.focus();
                 return;
             }
 
-            // 2. Valida senha em branco
+            // 2. Validação: Senha em branco
             if (senhaValor === '') {
-                abrirModal('modalSenhaBranco');
+                abrirModal('modalSenhaVazia');
                 passwordInput.focus();
+                return;
+            }
+
+            // 3. Validação: E-mail inválido (formato incorreto)
+            if (!validarFormatoEmail(emailValor)) {
+                abrirModal('modalEmailInvalido');
+                emailInput.focus();
                 return;
             }
 
@@ -50,24 +63,24 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // Procura o usuário pelo e-mail
                 const usuario = dados.usuarios.find(
-                    usuario => usuario.email.toLowerCase() === emailValor
+                    u => u.email.toLowerCase() === emailValor
                 );
 
-                // 3. E-mail não cadastrado
+                // 4. Validação: E-mail não encontrado no JSON
                 if (!usuario) {
-                    abrirModal('modalEmailInvalido');
+                    abrirModal('modalEmailNaoCadastrado');
                     emailInput.focus();
                     return;
                 }
 
-                // 4. Senha incorreta
+                // 5. Validação: E-mail existe, mas a senha está incorreta
                 if (usuario.senha !== senhaValor) {
-                    alert('Senha incorreta.');
+                    abrirModal('modalCredenciaisIncorretas'); // Dispara o modal atualizado apenas para senha errada
                     passwordInput.focus();
                     return;
                 }
 
-                // // Salva o nome do usuário para usar na próxima página
+                // Salva o nome do usuário para usar na próxima página
                 sessionStorage.setItem('usuarioLogado', JSON.stringify(usuario));
 
                 // Redireciona para a página principal
@@ -85,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================================
     const containersLibras = document.querySelectorAll('.libras-help-container');
     const temporizadores = {};
-    const TEMPO_PARA_FECHAR = 5000; // 5 segundos
 
     containersLibras.forEach((container, index) => {
         const btn = container.querySelector('.btn-info-libras');
@@ -103,10 +115,12 @@ document.addEventListener('DOMContentLoaded', () => {
                     container.classList.add('active');
                     btn.setAttribute('aria-expanded', 'true');
 
+                    const tempoGif = parseInt(btn.getAttribute('data-tempo')) || 5000;
+
                     temporizadores[index] = setTimeout(() => {
                         container.classList.remove('active');
                         btn.setAttribute('aria-expanded', 'false');
-                    }, TEMPO_PARA_FECHAR);
+                    }, tempoGif);
                 }
             });
         }
@@ -146,7 +160,7 @@ document.addEventListener('DOMContentLoaded', () => {
         btnVoz.addEventListener('click', () => {
             window.speechSynthesis.cancel();
             const texto = "Página de Login INSEP Acessível. Digite seu e-mail e senha. Para ver a tradução em Libras de qualquer item, clique no botão de informação azul.";
-            
+
             const utterance = new SpeechSynthesisUtterance(texto);
             utterance.lang = 'pt-BR';
             window.speechSynthesis.speak(utterance);
