@@ -34,3 +34,23 @@ librasModal.addEventListener('show.bs.modal', function (event) {
     imagem.src = gif;
     imagem.alt = `Sinal em Libras de ${nome}`;
 });
+
+const professorModal = document.getElementById("professorModal");
+
+professorModal.addEventListener("show.bs.modal", function (event) {
+
+    const botao = event.relatedTarget;
+
+    const nome = botao.getAttribute("data-nome");
+    const foto = botao.getAttribute("data-foto");
+
+    const nomeProfessor = document.getElementById("nomeProfessor");
+    const fotoProfessor = document.getElementById("fotoProfessor");
+    const tituloModal = document.getElementById("professorModalLabel");
+
+    nomeProfessor.textContent = nome;
+    tituloModal.textContent = nome;
+
+    fotoProfessor.src = foto;
+    fotoProfessor.alt = `Foto de ${nome}`;
+});
