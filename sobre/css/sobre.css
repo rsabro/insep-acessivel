@@ -699,10 +699,13 @@ code {
         flex-direction: column;
     }
 }
+/* =========================
+   AGRADECIMENTOS
+========================= */
 
 .agradecimentos-intro {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   gap: 30px;
   margin: 20px 0 30px;
 }
@@ -713,6 +716,7 @@ code {
 
 .video-agradecimentos {
   width: 200px;
+  max-width: 100%;
   height: auto;
   display: block;
   border-radius: 12px;
@@ -720,30 +724,106 @@ code {
 
 .agradecimentos-texto {
   flex: 1;
+  min-width: 0;
 }
 
 .agradecimentos-texto p {
-  margin-bottom: 15px;
+  margin: 0 0 15px;
 }
 
-/* Celular */
+
+/* =========================
+   CELULAR
+========================= */
+
 @media (max-width: 768px) {
+
+  /* Vídeo + texto */
   .agradecimentos-intro {
+    display: flex;
     flex-direction: column;
-    align-items: center;
-    gap: 20px;
+    align-items: stretch;
+    gap: 16px;
+    width: 100%;
+    margin: 15px 0 20px;
   }
 
   .video-agradecimentos-container {
     flex: none;
+    width: 100%;
+    display: flex;
+    justify-content: center;
   }
 
   .video-agradecimentos {
     width: 100%;
     max-width: 280px;
+    height: auto;
   }
 
   .agradecimentos-texto {
     width: 100%;
+    min-width: 0;
+  }
+
+  .agradecimentos-texto p {
+    width: 100%;
+    margin: 0 0 15px;
+    overflow-wrap: break-word;
+  }
+
+
+  /* Caixa azul */
+  .info-box {
+    width: 100%;
+    box-sizing: border-box;
+    display: block;
+    padding: 15px;
+  }
+
+  .info-box p {
+    width: 100%;
+    margin: 10px 0;
+  }
+
+
+  /* Botões dos professores */
+  .professor-btns {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    width: 100%;
+    margin: 12px 0;
+  }
+
+  .professor-btn {
+    width: 100%;
+    min-width: 0;
+    padding: 10px 6px;
+    white-space: normal;
+    word-break: normal;
+    overflow-wrap: break-word;
+    text-align: center;
+  }
+
+
+  /* Mensagem final */
+  .mensagem-final {
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+  }
+}
+
+
+/* Celular muito pequeno */
+@media (max-width: 400px) {
+
+  .professor-btns {
+    grid-template-columns: 1fr;
+  }
+
+  .video-agradecimentos {
+    max-width: 240px;
   }
 }
